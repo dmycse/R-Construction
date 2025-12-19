@@ -1,0 +1,35 @@
+---
+import type { ContactsType } from "@/content/config";
+import { iconsMap } from "@/utils/iconsMap";
+
+interface Props {
+  contacts: ContactsType
+};
+
+const { contacts } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row gap-3">
+  {contacts.map(elem => {
+    if (!elem.visible) return null;
+
+    const iconFileName = elem.icon.split('/').pop() ?? '';
+    const IconComponent = iconsMap[iconFileName];
+    
+    return (
+      <a 
+        href={elem.url}
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label={elem.name}
+        title={elem.name} 
+        class="flex items-center gap-2"
+      >
+        {IconComponent && <IconComponent class="p-1.5 w-8 h-8 bg-primary text-white" />}
+        <span class="font-medium text-primary">
+          {elem.text}
+        </span>
+      </a>
+    );
+  })}
+</div>
