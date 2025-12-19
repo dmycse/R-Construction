@@ -1,0 +1,31 @@
+{
+  "visible": true,
+  "title": "Header",
+  "links": [
+    {
+      "visible": true,
+      "name": "Home",
+      "path": "home"
+    },
+    {
+      "visible": true,
+      "name": "About",
+      "path": "about"
+    },
+    {
+      "visible": true,
+      "name": "Services",
+      "path": "services"
+    },
+    {
+      "visible": true,
+      "name": "Projects",
+      "path": "projects"
+    },
+    {
+      "visible": true,
+      "name": "Contacts",
+      "path": "contacts"
+    }
+  ]
+}

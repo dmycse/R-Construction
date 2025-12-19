@@ -1,0 +1,20 @@
+{
+  "visible": true,
+  "title": "Topbar",
+  "links": [
+    {
+      "visible": true,
+      "name": "phone",
+      "icon": "/src/assets/icons/phoneIcon.svg",
+      "text": "+30 694 606 93 94",
+      "url": "tel:+30 694 606 93 94"
+    },
+    {
+      "visible": true,
+      "name": "email",
+      "icon": "/src/assets/icons/emailIcon.svg",
+      "text": "q5Bt8@example.com",
+      "url": "mailto:q5Bt8@example.com"
+    }
+  ]
+}
