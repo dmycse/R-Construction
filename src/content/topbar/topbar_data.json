@@ -1,7 +1,7 @@
 {
   "visible": true,
   "title": "Topbar",
-  "links": [
+  "contacts": [
     {
       "visible": true,
       "name": "phone",
@@ -14,7 +14,23 @@
       "name": "email",
       "icon": "/src/assets/icons/emailIcon.svg",
       "text": "q5Bt8@example.com",
-      "url": "mailto:q5Bt8@example.com"
+      "url": "#"
+    }
+  ],
+  "socials": [
+    {
+      "visible": true,
+      "name": "facebook",
+      "icon": "/src/assets/icons/facebookIcon.svg",
+      "text": "",
+      "url": "tel:+30 694 606 93 94"
+    },
+    {
+      "visible": true,
+      "name": "instagram",
+      "icon": "/src/assets/icons/instagramIcon.svg",
+      "text": "",
+      "url": "#"
     }
   ]
 }

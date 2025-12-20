@@ -6,11 +6,18 @@ export const topbarData = defineCollection({
   schema: z.object({
     visible: z.boolean(),
     title: z.string(),
-    links: z.array(z.object({
+    contacts: z.array(z.object({
       visible: z.boolean(),
       name: z.string(),
       icon: z.string(),
-      text: z.string(),
+      text: z.string().optional(),
+      url: z.string()
+    })),
+    socials: z.array(z.object({
+      visible: z.boolean(),
+      name: z.string(),
+      icon: z.string(),
+      text: z.string().optional(),
       url: z.string()
     }))
   })
@@ -33,3 +40,6 @@ export const collections = {
   'topbar': topbarData,
   'header': headerData,
 };
+
+type TobBarSchema = InferEntrySchema<'topbar'>;
+export type ContactsType = TobBarSchema['contacts'];
