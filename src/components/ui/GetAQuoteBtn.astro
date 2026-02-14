@@ -1,0 +1,25 @@
+---
+import IconComponent from '@/components/ui/IconComponent.astro';
+
+interface Props {
+  button: {
+    name: string;
+    path: string;
+    icon: string;
+  };
+}
+
+const { button } = Astro.props;
+---
+
+<button class="group shrink-0 pl-2 pr-1 py-0.5 flex items-center justify-between gap-2 bg-white rounded-md">
+  <span class="font-primary font-bold uppercase text-primary text-center text-sm tracking-wide">
+    {button.name}
+  </span>
+  <span class="bg-primary rounded-md">
+    <IconComponent 
+      name={button.icon} 
+      className="p-2 size-8 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300"
+    />
+  </span>
+</button>
