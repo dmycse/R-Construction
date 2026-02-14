@@ -4,8 +4,8 @@ import type { ImageFunction, InferEntrySchema } from 'astro:content';
 export const topbarData = defineCollection({
   type: 'data',
   schema: z.object({
-    visible: z.boolean(),
     title: z.string(),
+    sectionId: z.string(),
     contacts: z.array(z.object({
       visible: z.boolean(),
       name: z.string(),
@@ -13,7 +13,7 @@ export const topbarData = defineCollection({
       text: z.string().optional(),
       url: z.string()
     })),
-    socials: z.array(z.object({
+    socialLinks: z.array(z.object({
       visible: z.boolean(),
       name: z.string(),
       icon: z.string(),
@@ -25,14 +25,29 @@ export const topbarData = defineCollection({
 
 export const headerData = defineCollection({
   type: 'data',
-  schema: z.object({
-    visible: z.boolean(),
+  schema: ({ image })  => z.object({
     title: z.string(),
+    sectionId: z.string(),
+    logo: z.object({
+      visible: z.boolean(),
+      name: z.string(),
+      image: image()
+    }),
     links: z.array(z.object({
       visible: z.boolean(),
       name: z.string(),
       path: z.string()
-    }))
+    })),
+    mobileIcons: z.object({
+      open: z.string(),
+      close: z.string()
+    }),
+    button: z.object({
+      visible: z.boolean(),
+      name: z.string(),
+      path: z.string(),
+      icon: z.string()
+    })
   })
 });
 
