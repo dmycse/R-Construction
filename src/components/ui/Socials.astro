@@ -1,20 +1,17 @@
 ---
 import type { ContactsType } from "@/content/config";
-import { iconsMap } from "@/utils/iconsMap";
+import IconComponent from "@/components/ui/IconComponent.astro";
 
 interface Props {
-  socials: ContactsType
+  socialLinks: ContactsType
 };
 
-const { socials } = Astro.props;
+const { socialLinks} = Astro.props;
 ---
 
-<div class="hidden md:flex items-center gap-2">
-  {socials.map(elem => {
+<div class="hidden md:flex items-center gap-4">
+  {socialLinks.map(elem => {
     if (!elem.visible) return null;
-
-    const iconFileName = elem.icon.split('/').pop() ?? '';
-    const IconComponent = iconsMap[iconFileName];
     
     return (
       <a 
@@ -23,10 +20,10 @@ const { socials } = Astro.props;
         rel="noopener noreferrer" 
         aria-label={elem.name}
         title={elem.name} 
-        class="flex items-center gap-2"
+        class="flex items-center"
       >
-        {IconComponent && <IconComponent class="p-1 w-8 h-8 text-primary" />}
-        <span class="font-medium text-primary">
+        <IconComponent name={elem.icon} className="p-1 w-8 h-8 bg-primary text-tertiary rounded-md" />
+        <span class="font-medium">
           {elem.text}
         </span>
       </a>
