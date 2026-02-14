@@ -10,7 +10,8 @@
 
   --color-primary: #121315;
   --color-secondary: #666666;
-  --color-accent: #ffc3B;
+  --color-tertiary: var(--color-amber-200);
+  --color-accent: #ffca3B;
   --color-border: #d7d7d7;
 
   --shadow-custom: "0px 4px 54px 10px rgba(18, 19, 21, 0.06)";
@@ -26,7 +27,7 @@
   }
 
   body {
-    @apply font-secondary text-secondary
+    @apply font-secondary text-secondary;
   }
 
   h1, h2, h3, h4, h5, h6 {
