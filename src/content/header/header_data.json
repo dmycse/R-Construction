@@ -1,11 +1,16 @@
 {
-  "visible": true,
   "title": "Header",
+  "sectionId": "header",
+  "logo": {
+    "visible": true,
+    "name": "logo",
+    "image": "/src/assets/images/logo.png"
+  },
   "links": [
     {
       "visible": true,
       "name": "Home",
-      "path": "home"
+      "path": ""
     },
     {
       "visible": true,
@@ -27,5 +32,15 @@
       "name": "Contacts",
       "path": "contacts"
     }
-  ]
+  ],
+  "mobileIcons": {
+    "open": "burgerIcon",
+    "close": "closeIcon"
+  },
+  "button": {
+    "visible": true,
+    "name": "Get a quote",
+    "path": "contacts",
+    "icon": "arrowRightIcon"
+  }
 }
