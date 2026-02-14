@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import IconComponent from '../ui/IconComponent.astro';
+import NavDesktop from '@/components/header/NavDesktop.astro';
+import NavMobile from '@/components/header/NavMobile';
+import { getEntry } from 'astro:content';
+import GetAQuoteBtn from '../ui/GetAQuoteBtn.astro';
+
+const headerEntry = await getEntry('header', 'header_data');
+
+if (!headerEntry) {
+  throw new Error("Header not found");
+}
+
+const {logo, links, mobileIcons, button } = headerEntry.data;
+---
+ 
+<header class="sticky top-0 z-50 bg-primary">
+  <div class="size-full relative">
+    <div class="page-container py-4">
+      <div class="flex items-center justify-between">
+        {logo.visible && (
+          <a href="/">
+            <Image src={logo.image} alt={logo.name} />
+          </a>
+        )}
+        <NavDesktop 
+          links={links} 
+          button={button}
+          className="max-lg:hidden" 
+        />
+        <NavMobile
+          client:load 
+          links={links}
+          button={button}
+          className="lg:hidden"
+        >
+          <IconComponent
+            slot="open"
+            name={mobileIcons.open}
+            className="size-10 text-tertiary cursor-pointer"
+          />
+          <IconComponent
+            slot="close"
+            name={mobileIcons.close}
+            className="size-10 text-tertiary cursor-pointer"
+          />
+          {button.visible && <GetAQuoteBtn slot="btn" button={button} />}
+        </NavMobile>
+      </div>
+    </div>
+  </div>
+</header>
