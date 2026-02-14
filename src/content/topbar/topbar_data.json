@@ -1,34 +1,41 @@
 {
-  "visible": true,
   "title": "Topbar",
+  "sectionId": "topbar",
   "contacts": [
     {
       "visible": true,
       "name": "phone",
-      "icon": "/src/assets/icons/phoneIcon.svg",
+      "icon": "phoneIcon",
       "text": "+30 694 606 93 94",
       "url": "tel:+30 694 606 93 94"
     },
     {
       "visible": true,
-      "name": "email",
-      "icon": "/src/assets/icons/emailIcon.svg",
-      "text": "q5Bt8@example.com",
-      "url": "#"
+      "name": "whatsApp",
+      "icon": "whatsAppIcon",
+      "text": "+30 694 606 93 94",
+      "url": "https://wa.me/+306946069394"
     }
   ],
-  "socials": [
+  "socialLinks": [
+    {
+      "visible": true,
+      "name": "email",
+      "icon": "emailIcon",
+      "text": "",
+      "url": "#"
+    },
     {
       "visible": true,
       "name": "facebook",
-      "icon": "/src/assets/icons/facebookIcon.svg",
+      "icon": "facebookIcon",
       "text": "",
-      "url": "tel:+30 694 606 93 94"
+      "url": "#"
     },
     {
       "visible": true,
       "name": "instagram",
-      "icon": "/src/assets/icons/instagramIcon.svg",
+      "icon": "instagramIcon",
       "text": "",
       "url": "#"
     }
