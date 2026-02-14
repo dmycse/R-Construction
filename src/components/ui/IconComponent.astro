@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  name: string;
+  className?: string
+}
+
+const { name, className } = Astro.props;
+---
+
+<Icon name={name} class={className} />
