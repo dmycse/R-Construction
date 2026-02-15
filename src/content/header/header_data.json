@@ -37,9 +37,9 @@
     "open": "burgerIcon",
     "close": "closeIcon"
   },
-  "button": {
+  "ctaBtn": {
     "visible": true,
-    "name": "Get a quote",
+    "label": "Get a quote",
     "path": "contacts",
     "icon": "arrowRightIcon"
   }
