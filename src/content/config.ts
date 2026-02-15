@@ -56,10 +56,10 @@ export const heroData = defineCollection({
   schema: ({ image })  => z.object({
     title: z.string(),
     sectionId: z.string(),
-    heroTitle: z.string(),
-    heroSubtitle: z.string(),
-    heroText: z.string(),
-    heroImage: image(),
+    sectionTitle: z.string(),
+    sectionSubtitle: z.string(),
+    sectionText: z.string(),
+    sectionImage: image(),
     ctaBtn: z.object({
       visible: z.boolean(),
       label: z.string(),
