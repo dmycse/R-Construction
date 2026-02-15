@@ -42,11 +42,29 @@ export const headerData = defineCollection({
       open: z.string(),
       close: z.string()
     }),
-    button: z.object({
+    ctaBtn: z.object({
       visible: z.boolean(),
-      name: z.string(),
+      label: z.string(),
       path: z.string(),
-      icon: z.string()
+      icon: z.string().optional()
+    })
+  })
+});
+
+export const heroData = defineCollection({
+  type: 'data',
+  schema: ({ image })  => z.object({
+    title: z.string(),
+    sectionId: z.string(),
+    heroTitle: z.string(),
+    heroSubtitle: z.string(),
+    heroText: z.string(),
+    heroImage: image(),
+    ctaBtn: z.object({
+      visible: z.boolean(),
+      label: z.string(),
+      path: z.string(),
+      icon: z.string().optional()
     })
   })
 });
@@ -54,6 +72,7 @@ export const headerData = defineCollection({
 export const collections = {
   'topbar': topbarData,
   'header': headerData,
+  'hero': heroData,
 };
 
 type TobBarSchema = InferEntrySchema<'topbar'>;

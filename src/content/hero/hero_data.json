@@ -1,0 +1,14 @@
+{
+  "title": "Hero",
+  "sectionId": "hero",
+  "heroTitle": "Reliable building solutions",
+  "heroSubtitle": "crafted by an experienced professionals",
+  "heroText": "We deliver high-quality work on time, creating results that meet your expectations and delight for years to come",
+  "heroImage": "/src/assets/images/hero/hero.jpg",
+  "ctaBtn": {
+    "visible": true,
+    "label": "See our work",
+    "path": "projects",
+    "icon": "arrowRightIcon"
+  }
+}
