@@ -11,31 +11,59 @@
   --color-primary: #121315;
   --color-secondary: #666666;
   --color-tertiary: var(--color-amber-200);
-  --color-accent: #ffca3B;
+  --color-accent: var(--color-amber-400);
   --color-border: #d7d7d7;
 
   --shadow-custom: "0px 4px 54px 10px rgba(18, 19, 21, 0.06)";
 
   --bg-hero: url("/images/hero/bg.jpg");
+
+  --breakpoint-3xl: 108rem;
+  --breakpoint-4xl: 120rem;
+  --breakpoint-5xl: 160rem;
 }
 
 /* Adds pointer cursor to buttons */
 @layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
 
   html {
-    @apply scroll-smooth;
+    height: 100%;
+    font-family: sans-serif;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply font-secondary text-secondary;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    font-family: var(--font-secondary), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    font-synthesis: none;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    color: var(--color-secondary);
+    background-color: #fff;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-primary text-primary;
+    font-family: var(--font-primary), system-ui, sans-serif;
+    color: var(--color-primary);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1 {
-    @apply text-[2.5rem] xl:text-[3.4rem] font-bold leading-[1.1] uppercase;
+    @apply text-4xl lg:text-7xl xl:text-7xl 2xl:text-9xl font-bold leading-[1.3] uppercase;
   }
 
   h2 {
@@ -57,11 +85,22 @@
   }
 }
 
-@layer components {
-  .page-container {
-    padding-inline: 16px;
-    margin-inline: auto;
-    @apply container;
+@utility page-container {  
+  margin-inline: auto;  
+  padding-inline: 1rem;
+  width: 100%;
+
+
+  @media (width >= 108rem /* 1735px */) {
+    max-width: 108rem /* 1735px */;
+  }
+
+  @media (width >= 120rem /* 1920px */) {
+    max-width: 120rem /* 1920px */;
+  }
+
+  @media (width >= 160rem /* 2560px */) {
+    max-width: 160rem /* 2560px */;
   }
 }
 
