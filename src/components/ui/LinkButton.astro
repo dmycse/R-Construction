@@ -1,0 +1,32 @@
+---
+import IconComponent from '@/components/ui/IconComponent.astro';
+
+interface Props {
+  link: {
+    label: string;
+    path: string;
+    icon?: string;
+  };
+  linkStyle?: string;
+  labelStyle?: string;
+}
+
+const { link, linkStyle, labelStyle } = Astro.props;
+---
+
+<a 
+  href={`#${link.path}`}
+  class={`group shrink-0 flex items-center justify-between gap-2 rounded-md cursor-pointer ${linkStyle && linkStyle}`}
+>
+  <span class={`font-primary font-bold uppercase text-primary text-center text-sm tracking-wide ${labelStyle && labelStyle}`}>
+    {link.label}
+  </span>
+  {link.icon && (
+    <span class="bg-primary rounded-md">
+      <IconComponent 
+        name={link.icon} 
+        className="p-2 size-8 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300"
+      />
+    </span>
+  )}
+</a>
