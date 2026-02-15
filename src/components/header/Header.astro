@@ -1,18 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import IconComponent from '../ui/IconComponent.astro';
-import NavDesktop from '@/components/header/NavDesktop.astro';
-import NavMobile from '@/components/header/NavMobile';
 import { getEntry } from 'astro:content';
-import GetAQuoteBtn from '../ui/GetAQuoteBtn.astro';
+
+import NavDesktop from '@/components/header/NavDesktop';
+import NavMobile from '@/components/header/NavMobile';
+import LinkButton from '@/components/ui/LinkButton.astro';
 
 const headerEntry = await getEntry('header', 'header_data');
 
 if (!headerEntry) {
-  throw new Error("Header not found");
+  throw new Error("Header data not found");
 }
 
-const {logo, links, mobileIcons, button } = headerEntry.data;
+const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
 ---
  
 <header class="sticky top-0 z-50 bg-primary">
@@ -24,15 +25,16 @@ const {logo, links, mobileIcons, button } = headerEntry.data;
             <Image src={logo.image} alt={logo.name} />
           </a>
         )}
-        <NavDesktop 
+        <NavDesktop
+          client:load 
           links={links} 
-          button={button}
           className="max-lg:hidden" 
-        />
+        >
+          {ctaBtn.visible && <LinkButton link={ctaBtn} linkStyle="pl-2 pr-1 py-0.5 bg-white" />}
+        </NavDesktop>
         <NavMobile
           client:load 
           links={links}
-          button={button}
           className="lg:hidden"
         >
           <IconComponent
@@ -45,7 +47,7 @@ const {logo, links, mobileIcons, button } = headerEntry.data;
             name={mobileIcons.close}
             className="size-10 text-tertiary cursor-pointer"
           />
-          {button.visible && <GetAQuoteBtn slot="btn" button={button} />}
+          {ctaBtn.visible && <LinkButton link={ctaBtn} linkStyle="pl-2 pr-1 py-0.5 bg-white" />}
         </NavMobile>
       </div>
     </div>
