@@ -1,4 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
+import { useActiveLink } from "@/hooks/useActiveLink";
 import NavMobileBtn from "@/components/header/NavMobileBtn";
 
 type NavMobileProps = {
@@ -7,23 +8,17 @@ type NavMobileProps = {
     name: string;
     path: string;
   }[];
-  button: {
-    visible: boolean;
-    name: string;
-    path: string;
-    icon: string;
-  };
   open?: preact.ComponentChildren,
   close?: preact.ComponentChildren,
-  btn?: preact.ComponentChildren,
   children?: preact.ComponentChildren;
   className?: string,
 };
 
 
-export default function NavMobile({ links, button, open, close, btn, className }: NavMobileProps) {
+export default function NavMobile({ links, open, close, className, children }: NavMobileProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("");
+
+  const activeHash = useActiveLink(() => setIsOpen(false));
   
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -32,22 +27,6 @@ export default function NavMobile({ links, button, open, close, btn, className }
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  useEffect(() => {
-    if (window) {
-      setActiveHash(window.location.hash);
-    }
-    const handleHashChange = () => {
-      setActiveHash(window.location.hash);
-      setIsOpen(false);
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
 
   return (
     <nav class={className}>
@@ -66,7 +45,7 @@ export default function NavMobile({ links, button, open, close, btn, className }
       <aside
         id="mobile-menu"
         class={`w-full h-dvh md:h-[50svh] landscape:h-svh absolute inset-x-0 top-full z-40
-                flex flex-col items-center bg-primary border-t border-amber-300
+                flex flex-col items-center bg-primary border-t border-tertiary
                 transition-transform duration-800 ease-out 
                 ${isOpen ? "translate-y-0 pointer-events-auto" : "-translate-y-[200%] pointer-events-none"}
         `}
@@ -89,7 +68,7 @@ export default function NavMobile({ links, button, open, close, btn, className }
             </li>
           ))}
         </ul>
-        <a href={`#${button.path}`}>{btn}</a>
+        {children}
       </aside>
   </nav>
   )
