@@ -1,0 +1,14 @@
+{
+  "title": "About",
+  "sectionId": "about",
+  "sectionTitle": "About Us",
+  "sectionSubtitle": "Committed to Quality in Every Project from Start to Finish",
+  "sectionText": "We are an experienced team of professionals serving the Apokoronas area. With numerous completed projects across a wide range of construction and renovation works of varying complexity, we bring expertise, reliability, and attention to detail to every project we undertake. From concept to completion, we deliver results you can rely on.",
+  "sectionImage": "/src/assets/images/about/about.jpg",
+  "ctaBtn": {
+    "visible": true,
+    "label": "Contact us",
+    "path": "contacts",
+    "icon": "arrowRightIcon"
+  }
+}

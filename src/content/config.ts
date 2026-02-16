@@ -51,7 +51,7 @@ export const headerData = defineCollection({
   })
 });
 
-export const heroData = defineCollection({
+export const sectionData = defineCollection({
   type: 'data',
   schema: ({ image })  => z.object({
     title: z.string(),
@@ -72,7 +72,9 @@ export const heroData = defineCollection({
 export const collections = {
   'topbar': topbarData,
   'header': headerData,
-  'hero': heroData,
+  'hero': sectionData,
+  'about': sectionData,
+  'projects': sectionData
 };
 
 type TobBarSchema = InferEntrySchema<'topbar'>;
