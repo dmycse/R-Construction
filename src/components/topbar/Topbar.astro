@@ -6,15 +6,17 @@ import Socials from '@/components/ui/Socials.astro';
 const topbarEntry = await getEntry('topbar', 'topbar_data');
 
 if (!topbarEntry) {
-  throw new Error("Topbar not found");
+  throw new Error("Topbardata not found");
 }
+
+const {sectionId, contacts, socialLinks} = topbarEntry.data;
 ---
 
-<section id={topbarEntry.data.sectionId} class="py-2 bg-linear-to-t from-amber-400 to-amber-200 relative z-30">
+<div id={sectionId} class="py-2 bg-linear-to-t from-amber-400 to-amber-200 relative z-30">
   <div class="page-container">
     <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <Contacts contacts={topbarEntry.data.contacts} />
-      <Socials socialLinks={topbarEntry.data.socialLinks} />
+      <Contacts contacts={contacts} />
+      <Socials socialLinks={socialLinks} />
     </div>
   </div>
-</section>
+</div>
