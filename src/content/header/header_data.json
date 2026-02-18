@@ -4,13 +4,14 @@
   "logo": {
     "visible": true,
     "name": "logo",
+    "path": "home",
     "image": "/src/assets/images/logo.png"
   },
   "links": [
     {
       "visible": true,
       "name": "Home",
-      "path": ""
+      "path": "home"
     },
     {
       "visible": true,
