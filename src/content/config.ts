@@ -31,6 +31,7 @@ export const headerData = defineCollection({
     logo: z.object({
       visible: z.boolean(),
       name: z.string(),
+      path: z.string(),
       image: image()
     }),
     links: z.array(z.object({
@@ -69,13 +70,30 @@ export const sectionData = defineCollection({
   })
 });
 
+export const statsData = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    sectionId: z.string(),
+    sectionTitle: z.string(),
+    statsData: z.array(z.object({
+      id: z.string(),
+      countNum: z.number(),
+      countText: z.string(),
+      text: z.string()
+    }))
+  })
+});
+
 export const collections = {
   'topbar': topbarData,
   'header': headerData,
   'hero': sectionData,
   'about': sectionData,
+  'stats': statsData,
   'projects': sectionData
 };
 
 type TobBarSchema = InferEntrySchema<'topbar'>;
 export type ContactsType = TobBarSchema['contacts'];
+export type StatsDataSchema = InferEntrySchema<'stats'>;
