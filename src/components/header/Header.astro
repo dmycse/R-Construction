@@ -21,7 +21,7 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
     <div class="page-container py-4">
       <div class="flex items-center justify-between">
         {logo.visible && (
-          <a href="/">
+          <a href={`#${logo.path}`}>
             <Image src={logo.image} alt={logo.name} />
           </a>
         )}
