@@ -1,0 +1,18 @@
+---
+import { getEntry } from 'astro:content';
+import StatsSection from '@/components/stats/StatsSection';
+
+const statsEntry = await getEntry('stats', 'stats_data');
+
+if (!statsEntry) {
+  throw new Error("Stats data not found");
+}
+
+const {sectionId, statsData} = statsEntry.data;
+---
+
+<StatsSection
+  client:visible
+  sectionId={sectionId} 
+  statsData={statsData}
+/>
