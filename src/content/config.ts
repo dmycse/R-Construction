@@ -85,15 +85,38 @@ export const statsData = defineCollection({
   })
 });
 
+export const servicesData = defineCollection({
+  type: 'data',
+  schema: ({ image })  => z.object({
+    title: z.string(),
+    sectionId: z.string(),
+    sectionTitle: z.string(),
+    sectionSubtitle: z.string(),
+    sectionText: z.string(),
+    ctaText: z.string(),
+    servicesData: z.array(z.object({
+      id: z.string(),
+      name: z.string(),
+      title: z.string(),
+      icon: z.string(),
+      images: z.array(image()),
+      description: z.string(),
+      serviceList: z.array(z.string())
+    }))
+  })
+});
+
 export const collections = {
   'topbar': topbarData,
   'header': headerData,
   'hero': sectionData,
   'about': sectionData,
   'stats': statsData,
+  'services': servicesData,
   'projects': sectionData
 };
 
 type TobBarSchema = InferEntrySchema<'topbar'>;
 export type ContactsType = TobBarSchema['contacts'];
 export type StatsDataSchema = InferEntrySchema<'stats'>;
+export type ServicesDataSchema = InferEntrySchema<'services'>;
