@@ -1,0 +1,34 @@
+---
+interface Props {
+  links: {
+    name: string,
+    path: string,
+    visible: boolean
+  }[];
+  ulStyle?: string;
+  liStyle?: string;
+}
+
+const { links, ulStyle = "", liStyle = "" } = Astro.props;
+---
+
+<ul data-nav-links class={ulStyle}>
+  {links.map(link => link.visible && (
+    <li class={liStyle}>
+      <a 
+        href={`#${link.path}`} 
+        data-path={link.path}
+        data-close-menu 
+        class="text-white text-xl uppercase tracking-wider hover:text-tertiary"
+      >
+        {link.name}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<script>
+  import { initNavLinks } from '../../../src/scripts/initNavLinks'; 
+
+  initNavLinks('[data-nav-links]');
+</script>
