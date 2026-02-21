@@ -1,0 +1,38 @@
+---
+import IconComponent from '@/components/ui/IconComponent.astro';
+
+interface Props {
+  icons: {
+    open: string;
+    close: string;
+  }
+};
+
+const { icons } = Astro.props;
+---
+
+<button
+  data-mobile-btn
+  aria-label="Toggle menu"
+  aria-controls="mobile-menu"
+  class="relative z-50 flex items-center justify-center"
+>
+  <span 
+    data-icon-open
+    class="absolute right-1 transition-all duration-500 ease-in-out"
+  >
+    <IconComponent
+      name={icons.open}
+      className="size-10 text-tertiary cursor-pointer"
+    />
+  </span>
+  <span 
+    data-icon-close
+    class="absolute right-1 transition-all duration-500 ease-in-out"
+  >
+    <IconComponent
+      name={icons.close}
+      className="size-10 text-tertiary cursor-pointer"
+    />
+  </span>
+</button>
