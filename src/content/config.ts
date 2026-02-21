@@ -59,7 +59,7 @@ export const sectionData = defineCollection({
     sectionId: z.string(),
     sectionTitle: z.string(),
     sectionSubtitle: z.string(),
-    sectionText: z.string(),
+    sectionText: z.array(z.string()),
     sectionImage: image(),
     ctaBtn: z.object({
       visible: z.boolean(),
@@ -94,6 +94,12 @@ export const servicesData = defineCollection({
     sectionSubtitle: z.string(),
     sectionText: z.string(),
     ctaText: z.string(),
+    ctaBtn: z.object({
+      visible: z.boolean(),
+      label: z.string(),
+      path: z.string(),
+      icon: z.string().optional()
+    }),
     servicesData: z.array(z.object({
       id: z.string(),
       name: z.string(),

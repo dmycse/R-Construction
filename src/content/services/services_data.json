@@ -5,11 +5,17 @@
   "sectionSubtitle": "Solutions That Work for You",
   "sectionText": "We deliver tailored building solutions, guiding each project from planning through to completion with an emphasis on quality and practical workmanship.",
   "ctaText": "Let’s get started on your project! Reach out today to see how we can help turn your ideas into reality.",
+  "ctaBtn": {
+    "visible": true,
+    "label": "Contact us",
+    "path": "contacts",
+    "icon": "arrowRightIcon"
+  },
   "servicesData": [
     {
       "id": "1",
       "name": "construction",
-      "title": "Construction Services",
+      "title": "Construction Service",
       "icon": "constructionIcon",
       "images": [
         "/src/assets/images/services/thumb-1.jpg",
@@ -28,7 +34,7 @@
     {
       "id": "2",
       "name": "renovation",
-      "title": "Renovation Services",
+      "title": "Renovation Service",
       "icon": "wallFillIcon",
       "images": [
         "/src/assets/images/services/thumb-3.jpg",
@@ -47,7 +53,7 @@
     {
       "id": "3",
       "name": "restoration",
-      "title": "Restoration Services",
+      "title": "Restoration Service",
       "icon": "paintRollerIcon",
       "images": [
         "/src/assets/images/services/thumb-5.jpg",
@@ -66,7 +72,7 @@
     {
       "id": "4",
       "name": "maintenance",
-      "title": "Maintenance Services",
+      "title": "Maintenance Service",
       "icon": "hammerWrenchIcon",
       "images": [
         "/src/assets/images/services/thumb-3.jpg",
