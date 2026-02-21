@@ -1,0 +1,42 @@
+---
+import { getEntry } from 'astro:content';
+
+const statsEntry = await getEntry('stats', 'stats_data');
+
+if (!statsEntry) {
+  throw new Error("Stats data not found");
+}
+
+const {sectionId, statsData} = statsEntry.data;
+---
+
+<section 
+  id={sectionId}
+  data-section={sectionId}
+  class="w-full py-10 xl:py-24 bg-primary"
+>
+  <div class="page-container h-full">
+    <ul class="w-full flex flex-col lg:grid lg:grid-cols-4 lg:place-items-center gap-y-10 lg:gap-x-6 text-slate-50">
+      {statsData.map(statElem => (
+        <li class="flex flex-col items-center justify-between">
+          <div class="flex items-center gap-0 text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-bold">
+            <span data-count={statElem.countNum}>0</span>
+            <span>{statElem.countText}</span>
+          </div>
+          <p class="text-center text-xl md:text-2xl">{statElem.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<script>
+  import { initStatsCounter } from '../../../src/scripts/statsCounter.ts';
+
+  const section = document.querySelector('[data-section]') as HTMLElement;
+  
+  if (section) {
+    const sectioniId = section.dataset.section;
+    initStatsCounter(`[data-section="${sectioniId}"]`, { duration: 3000, threshold: 0.5 });
+  }
+</script>
