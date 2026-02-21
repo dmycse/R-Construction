@@ -3,12 +3,16 @@
   "sectionId": "about",
   "sectionTitle": "About Us",
   "sectionSubtitle": "Committed to Quality in Every Project from Start to Finish",
-  "sectionText": "We are an experienced team of professionals serving the Apokoronas area. With numerous completed projects across a wide range of construction and renovation works of varying complexity, we bring expertise, reliability, and attention to detail to every project we undertake. From concept to completion, we deliver results you can rely on.",
+  "sectionText": [
+    "We are an experienced team of professionals serving the Apokoronas area. With numerous projects completed across a variety of construction and renovation works, we bring expertise, reliability, and attention to detail to every task we undertake. From initial planning to final touches, we deliver results you can trust.",
+    "Our services also include property maintenance and restoration, ensuring that homes and outdoor spaces remain functional and well-kept.",
+    "Whether upgrading a residence, restoring older structures, or enhancing outdoor areas, we provide practical solutions designed for durability and long-term performance."
+  ],
   "sectionImage": "/src/assets/images/about/about.jpg",
   "ctaBtn": {
     "visible": true,
-    "label": "Contact us",
-    "path": "contacts",
+    "label": "Our Services",
+    "path": "services",
     "icon": "arrowRightIcon"
   }
 }
