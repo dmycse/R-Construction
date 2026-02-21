@@ -1,0 +1,42 @@
+---
+import NavMobileBtn from "@/components/header/NavMobileBtn.astro";
+import NavLinks from "@/components/header/NavLinks.astro";
+
+interface Props {
+  links: {
+    visible: boolean;
+    name: string;
+    path: string;
+  }[];
+  icons: {
+    open: string;
+    close: string;
+  };
+  className?: string,
+};
+
+const { links, icons, className } = Astro.props;
+---
+
+<div class={className}>
+  <NavMobileBtn icons={icons} />
+  <div data-nav-overlay class="fixed inset-0 z-10 bg-black/40 transition-opacity duration-600 opacity-0 pointer-events-none" />
+  <nav
+    data-mobile-menu
+    class="w-full h-dvh md:h-[50svh] landscape:h-svh absolute inset-x-0 top-full z-40
+            flex flex-col items-center bg-primary border-t border-tertiary
+            transition-transform duration-800 ease-out -translate-y-[200%] pointer-events-none"
+  >
+    <NavLinks 
+      links={links} 
+      ulStyle="p-12 flex items-center flex-col landscape:flex-row gap-y-12 sm:gap-x-10 text-center"
+    />
+    <slot />
+  </nav>
+</div>
+
+<script>
+    import { initNavMobile } from '../../../src/scripts/initNavMobile';
+    initNavMobile("[data-mobile-btn]", "[data-mobile-menu]", "[data-nav-overlay]");
+  </script>
+ 
