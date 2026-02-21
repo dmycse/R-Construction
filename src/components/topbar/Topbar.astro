@@ -1,7 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
 import Contacts from '@/components/ui/Contacts.astro';
-import Socials from '@/components/ui/Socials.astro';
 
 const topbarEntry = await getEntry('topbar', 'topbar_data');
 
@@ -15,8 +14,16 @@ const {sectionId, contacts, socialLinks} = topbarEntry.data;
 <div id={sectionId} class="py-2 bg-linear-to-t from-amber-400 to-amber-200 relative z-30">
   <div class="page-container">
     <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <Contacts contacts={contacts} />
-      <Socials socialLinks={socialLinks} />
+      <Contacts 
+        links={contacts}
+        wrapperStyle="flex flex-col sm:flex-row gap-3"
+        linkStyle="gap-2"
+      />
+      <Contacts 
+        links={socialLinks}
+        wrapperStyle="hidden md:flex items-center gap-4"
+        linkStyle="gap-1"
+      />
     </div>
   </div>
 </div>
