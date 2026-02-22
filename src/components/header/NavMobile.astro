@@ -18,14 +18,28 @@ interface Props {
 const { links, icons, className } = Astro.props;
 ---
 
-<div class={className}>
+<div
+  data-menu-container
+  data-menu-open="false"
+  class={`group/menu ${className}`}
+>
   <NavMobileBtn icons={icons} />
-  <div data-nav-overlay class="fixed inset-0 z-10 bg-black/40 transition-opacity duration-600 opacity-0 pointer-events-none" />
+  <div 
+    data-menu-overlay 
+    class="fixed inset-0 z-10 bg-black/40 
+          opacity-0 pointer-events-none
+          group-data-[menu-open=true]/menu:opacity-100
+          group-data-[menu-open=true]/menu:pointer-events-auto
+          transition-opacity duration-600"
+  />
   <nav
-    data-mobile-menu
-    class="w-full h-dvh md:h-[50svh] landscape:h-svh absolute inset-x-0 top-full z-40
-            flex flex-col items-center bg-primary border-t border-tertiary
-            transition-transform duration-800 ease-out -translate-y-[200%] pointer-events-none"
+    class="w-full h-dvh md:h-[50svh] landscape:h-svh 
+          absolute inset-x-0 top-full z-40
+          flex flex-col items-center bg-primary border-t border-tertiary
+          -translate-y-[200%] pointer-events-none
+          group-data-[menu-open=true]/menu:translate-y-0
+          group-data-[menu-open=true]/menu:pointer-events-auto
+          transition-transform duration-800 ease-out" 
   >
     <NavLinks 
       links={links} 
@@ -36,7 +50,10 @@ const { links, icons, className } = Astro.props;
 </div>
 
 <script>
-    import { initNavMobile } from '../../../src/scripts/initNavMobile';
-    initNavMobile("[data-mobile-btn]", "[data-mobile-menu]", "[data-nav-overlay]");
-  </script>
+  import { initNavMobile } from '../../../src/scripts/initNavMobile';
+  document.querySelectorAll('[data-menu-container]').forEach(container => {
+    if (!container) return;
+    initNavMobile(container as HTMLElement);
+  });
+</script>
  
