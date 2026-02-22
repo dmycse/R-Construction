@@ -1,0 +1,23 @@
+---
+import type { ServicesDataSchema } from "@/content/config";
+
+interface Props extends Omit<ServicesDataSchema['servicesData'][number], 'id'> {};
+
+const { name, title, description, images, serviceList } = Astro.props;
+---
+
+<div
+  id="service-content-id"
+  role="region"
+  aria-hidden="true" 
+  class="grid grid-rows-[0fr] group-data-[active=true]/item:grid-rows-[1fr] 
+        transition-[grid-template-rows] duration-600 ease-in-out"
+  style="contain: layout;"
+>
+  <div class="max-lg:overflow-hidden">
+      <div class="fade-in p-4 pb-8 lg:p-0 flex flex-col gap-4">
+        <h3 class="text-xl font-bold">{title}</h3>
+        <p>{description}</p>
+      </div>
+  </div>
+</div>
