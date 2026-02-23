@@ -14,27 +14,30 @@ const { name, icon } = Astro.props;
   aria-expanded="false" 
   aria-controls="service-content-id"
   class="group/btn w-full pr-2 lg:pr-4 
-        flex items-center gap-4 shadow-md rounded-md 
+        flex items-center gap-4 shadow-md bg-white rounded-md
+      group-data-[active=true]/item:bg-accent
         transition-all duration-600 ease-in-out"
 >
-  <span class="p-2 rounded-md text-primary bg-accent">
+  <span class="p-2 inline-flex items-center justify-center rounded-md text-primary bg-accent">
     <IconComponent
       name={icon}
-      className="size-14 md:size-16 lg:size-20"
+      className="size-14 md:size-16 lg:size-20 2xl:size-24"
     />
   </span>
-  <span class="flex-1 text-left text-lg md:text-xl xl:text-2xl 2xl:text-3xl
+  <span class="flex-1 text-left text-lg md:text-xl xl:text-2xl 2xl:text-4xl
              text-slate-600 tracking-wider uppercase 
               lg:group-hover/btn:font-semibold 
-              group-data-[active=true]/item:font-bold
-              transition-all duration-300 ease-in-out"
+              group-data-[active=true]/item:font-bold"
   >
     {name}
   </span>
-  <span>
+  <span class="mr-2 inline-flex items-center justify-center">
     <IconComponent
       name="arrowDownIcon"
-      className="size-6 text-slate-500 rotate-90 lg:rotate-0 group-data-[active=true]/item:rotate-0 lg:group-data-[active=true]/item:-rotate-90 transition-transform duration-600"
+      className=`size-6 text-slate-500 rotate-90 lg:rotate-0 
+                group-data-[active=true]/item:rotate-0 
+                lg:group-data-[active=true]/item:-rotate-90 
+                transition-transform duration-600`
     />
   </span>
 </button>
