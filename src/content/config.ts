@@ -92,7 +92,7 @@ export const servicesData = defineCollection({
     sectionId: z.string(),
     sectionTitle: z.string(),
     sectionSubtitle: z.string(),
-    sectionText: z.string(),
+    sectionText: z.array(z.string()),
     ctaText: z.string(),
     ctaBtn: z.object({
       visible: z.boolean(),

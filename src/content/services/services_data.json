@@ -3,7 +3,9 @@
   "sectionId": "services",
   "sectionTitle": "Our Services",
   "sectionSubtitle": "Solutions That Work for You",
-  "sectionText": "We deliver tailored building solutions, guiding each project from planning through to completion with an emphasis on quality and practical workmanship.",
+  "sectionText": [
+    "We deliver tailored building solutions, guiding each project from planning through to completion with an emphasis on quality and practical workmanship."
+  ],
   "ctaText": "Let’s get started on your project! Reach out today to see how we can help turn your ideas into reality.",
   "ctaBtn": {
     "visible": true,
