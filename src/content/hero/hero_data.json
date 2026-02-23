@@ -7,8 +7,8 @@
   "sectionImage": "/src/assets/images/hero/hero.jpg",
   "ctaBtn": {
     "visible": true,
-    "label": "See our work",
-    "path": "projects",
+    "label": "Contact us",
+    "path": "contacts",
     "icon": "arrowRightIcon"
   }
 }
