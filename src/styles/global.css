@@ -124,15 +124,26 @@
   }
 }
 
-@utility fade-in {
+@utility fade-in-y {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
-@utility fade-up {
+@utility fade-up-y {
   opacity: 1;
   transform: translateY(0);
+}
+
+@utility fade-in-x {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+@utility fade-up-x {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Defaults hover styles on all devices */
