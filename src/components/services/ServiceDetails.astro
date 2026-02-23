@@ -1,5 +1,6 @@
 ---
 import type { ServicesDataSchema } from "@/content/config";
+import { Image } from "astro:assets";
 
 interface Props extends Omit<ServicesDataSchema['servicesData'][number], 'id'> {};
 
@@ -11,13 +12,38 @@ const { name, title, description, images, serviceList } = Astro.props;
   role="region"
   aria-hidden="true" 
   class="grid grid-rows-[0fr] group-data-[active=true]/item:grid-rows-[1fr] 
-        transition-[grid-template-rows] duration-600 ease-in-out"
+        transition-[grid-template-rows] duration-600 ease-in-out
+        max-lg:last:group-data-[active=true]/item:border-b
+        max-lg:last:group-data-[active=true]/item:border-b-slate-200"
   style="contain: layout;"
 >
   <div class="max-lg:overflow-hidden">
-      <div class="fade-in p-4 pb-8 lg:p-0 flex flex-col gap-4">
-        <h3 class="text-xl font-bold">{title}</h3>
-        <p>{description}</p>
+    <div class="fade-in p-4 pb-6 lg:p-0 flex flex-col xl:flex-row gap-6 xl:gap-8 2xl:gap-10">
+      <div class="xl:shrink-0 flex xl:flex-col gap-6">
+        {images.map(image => (
+          <div class="">
+            <Image 
+              src={image} 
+              alt={name} 
+              class="w-full object-cover object-center rounded-lg"
+            />
+          </div>
+        ))}
       </div>
+      <div class="flex flex-col gap-2 lg:gap-4 xl:gap-6 2xl:gap-10">
+        <h3 class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold">{title}</h3>
+        <p class="text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">{description}</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-2 xl:gap-4">
+          {serviceList.map(service => (
+            <li 
+              class="flex items-center gap-4
+                    text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-medium
+                    before:content-[''] before:size-2 before:bg-accent">
+              {service}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
