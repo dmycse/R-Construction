@@ -21,7 +21,7 @@ const {
 } = servicesEntry.data;
 ---
 
-<section id={sectionId} class="section-padding scroll-mt-10">  
+<section id={sectionId} class="section-padding bg-slate-50 scroll-mt-10">  
   <div class="page-container">
     <div class="fade-in flex flex-col gap-10 lg:gap-16 xl:gap-24">
 
@@ -29,7 +29,7 @@ const {
         <h2 class="section-title">{sectionTitle}</h2>
         <div class="lg:max-w-3/4 xl:max-w-3/5 flex flex-col lg:items-center justify-center gap-y-6 lg:gap-y-8 xl:gap-y-10 landscape:max-md:gap-y-8">
           <h3 class="lg:text-center text-primary">{sectionSubtitle}</h3>
-          <p class="font-primary lg:text-center text-lg md:text-xl 2xl:text-3xl text-slate-600">{sectionText}</p>
+          <p class="font-primary lg:text-center text-xl 2xl:text-3xl text-slate-600">{sectionText}</p>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ const {
           <div
             data-id={service.id}
             data-active="false"
-            class="group/item flex flex-col gap-4 "
+            class="group/item flex flex-col gap-4"
           >
             <ServiceButton name={service.name} icon={service.icon} />
             <ServiceDetails {...service} />
@@ -51,26 +51,26 @@ const {
 
       <div
         data-mode="desktop" 
-        class="hidden lg:grid grid-cols-[40%_1fr] gap-12"
+        class="hidden lg:grid grid-cols-[40%_1fr] xl:grid-cols-[30%_1fr] items-stretch gap-10"
       >
-        <div class="h-full flex flex-col gap-4">
+        <div class="flex flex-col justify-between">
           {servicesData.map((service, index) => (
             <div 
               data-id={service.id} 
               data-active={index === 0 ? "true" : "false"} 
-              class="group/item flex-1"
+              class="group/item"
             >
               <ServiceButton name={service.name} icon={service.icon} />
             </div>
           ))}
         </div>
-        <div class="lg:px-8 xl:px-12 h-full grid grid-cols-1 grid-rows-1">
+        <div class="lg:p-8 xl:p-12 grid grid-cols-1 grid-rows-1 bg-white shadow-md">
           {servicesData.map((service, index) => (
             <div 
               data-content-id={service.id}
               data-active={index === 0 ? "true" : "false"}
               class="col-start-1 row-start-1 opacity-0 data-[active=true]:opacity-100 
-                    transition-opacity duration-600 pointer-events-none"
+                    transition-opacity duration-500 pointer-events-none"
             >
               <ServiceDetails {...service} />
             </div>
