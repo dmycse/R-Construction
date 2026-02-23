@@ -11,8 +11,8 @@
   "sectionImage": "/src/assets/images/about/about.jpg",
   "ctaBtn": {
     "visible": true,
-    "label": "Our Services",
-    "path": "services",
+    "label": "See Our Work",
+    "path": "projects",
     "icon": "arrowRightIcon"
   }
 }
