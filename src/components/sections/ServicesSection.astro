@@ -23,15 +23,16 @@ const {
 
 <section id={sectionId} class="section-padding bg-slate-50 scroll-mt-10">  
   <div class="page-container">
-    <div class="fade-in-x flex flex-col gap-10 lg:gap-16 xl:gap-24">
+    <div class="flex flex-col gap-10 lg:gap-16 xl:gap-24">
 
-      <div class="flex flex-col lg:items-center lg:justify-center gap-10 lg:gap-16 2xl:gap-24">
+      <div class="fade-in-x flex flex-col lg:items-center lg:justify-center gap-10 lg:gap-16 2xl:gap-24">
         <h2 class="section-title">{sectionTitle}</h2>
-        <div class="lg:max-w-3/4 xl:max-w-3/5 flex flex-col lg:items-center justify-center gap-y-6 lg:gap-y-8 xl:gap-y-10 landscape:max-md:gap-y-8">
+        <div class="lg:max-w-3/4 xl:max-w-3/5 flex flex-col lg:items-center justify-center 
+                    gap-y-6 lg:gap-y-8 xl:gap-y-10 landscape:max-md:gap-y-8">
           <h3 class="lg:text-center text-primary">{sectionSubtitle}</h3>
-          <p class="inline-flex flex-col gap-y-1 font-primary lg:text-center">
+          <p class="font-primary lg:text-center">
             {sectionText.map(sentence => (
-              <span class="text-xl 2xl:text-3xl text-slate-600">
+              <span class="text-xl 2xl:text-2xl text-slate-600">
                 {sentence}
               </span>
             ))}
@@ -41,7 +42,7 @@ const {
 
       <div 
         data-mode="mobile"
-        class="lg:hidden" 
+        class="lg:hidden fade-in-x" 
       >
         {servicesData.map(service => (
           <div
@@ -57,7 +58,7 @@ const {
 
       <div
         data-mode="desktop" 
-        class="hidden lg:grid grid-cols-[40%_1fr] xl:grid-cols-[30%_1fr] items-stretch gap-10"
+        class="hidden fade-in-x lg:grid grid-cols-[40%_1fr] xl:grid-cols-[30%_1fr] items-stretch gap-10"
       >
         <div class="flex flex-col justify-between">
           {servicesData.map((service, index) => (
@@ -76,8 +77,7 @@ const {
               data-content-id={service.id}
               data-active={index === 0 ? "true" : "false"}
               class="col-start-1 row-start-1 opacity-0 data-[active=true]:opacity-100 
-                    transition-opacity duration-500 pointer-events-none"
-            >
+                    transition-opacity duration-500 pointer-events-none">
               <ServiceDetails {...service} />
             </div>
           ))}
@@ -85,7 +85,9 @@ const {
       </div>
 
       <div class="flex flex-col gap-8 lg:gap-12 xl:gap-16">
-        <p class="font-primary lg:text-center text-lg md:text-xl 2xl:text-3xl text-slate-600">{ctaText}</p>
+        <p class="font-primary lg:text-center text-lg md:text-xl 2xl:text-3xl text-slate-600">
+          {ctaText}
+        </p>
         {ctaBtn.visible && (
           <div class="lg:mx-auto w-2/3 sm:max-w-1/2 lg:max-w-2/5 xl:max-w-1/4 2xl:max-w-1/5 bg-accent rounded-md">
             <LinkButton
