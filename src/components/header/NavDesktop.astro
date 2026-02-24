@@ -13,11 +13,11 @@ interface Props {
 const { links, className } = Astro.props;
 ---
 
-<nav class={`${className} flex items-center gap-4 md:gap-8`}>
+<nav class={`${className} flex items-center gap-4 md:gap-8 lg:gap-4`}>
   <NavLinks 
     links={links} 
     ulStyle="flex gap-0"
-    liStyle="after:content-['/'] after:mx-2 last:after:content-none"
+    liStyle="after:content-['/'] after:mx-2 xl:after:mx-4 2xl:after:mx-6 last:after:content-none"
   />
   <slot />
 </nav>

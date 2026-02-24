@@ -29,14 +29,26 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
           links={links} 
           className="max-lg:hidden" 
         >
-          {ctaBtn.visible && <LinkButton link={ctaBtn} linkStyle="pl-2 pr-1 py-0.5 bg-white" />}
+          {ctaBtn.visible && (
+            <LinkButton 
+              link={ctaBtn} 
+              linkStyle="px-1 py-0.5 bg-white"
+              labelStyle="lg:text-base xl:text-lg 2xl:text-xl" 
+            />
+          )}
         </NavDesktop>
         <NavMobile
           links={links}
           icons={mobileIcons}
           className="lg:hidden"
         >
-          {ctaBtn.visible && <LinkButton link={ctaBtn} linkStyle="pl-2 pr-1 py-0.5 bg-white" />}
+          {ctaBtn.visible && (
+            <LinkButton 
+              link={ctaBtn} 
+              linkStyle="pl-2 pr-1 py-0.5 bg-white"
+              labelStyle="text-xl lg:text-base"
+            />
+          )}
         </NavMobile>
       </div>
     </div>

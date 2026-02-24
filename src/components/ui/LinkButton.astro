@@ -16,16 +16,16 @@ const { link, linkStyle, labelStyle } = Astro.props;
 
 <a 
   href={`#${link.path}`}
-  class={`group shrink-0 flex items-center justify-between gap-2 rounded-md cursor-pointer ${linkStyle && linkStyle}`}
+  class={`group shrink-0 p-2 flex items-center justify-between gap-2 rounded-md cursor-pointer ${linkStyle && linkStyle}`}
 >
-  <span class={`font-primary font-bold uppercase text-primary text-center text-sm tracking-wide ${labelStyle && labelStyle}`}>
+  <span class={`p-2 font-primary font-bold uppercase text-primary text-center text-2xl lg:text-3xl 2xl:text-4xl tracking-wide ${labelStyle && labelStyle}`}>
     {link.label}
   </span>
   {link.icon && (
-    <span class="bg-primary rounded-md">
+    <span class="p-3 inline-flex items-center justify-center bg-primary rounded-md">
       <IconComponent 
         name={link.icon} 
-        className="p-2 size-8 md:size-10 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300"
+        className="size-5 md:size- text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300"
       />
     </span>
   )}
