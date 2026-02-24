@@ -1,0 +1,55 @@
+{
+  "title": "Projects",
+  "sectionId": "projects",
+  "sectionTitle": "Our Projects",
+  "sectionSubtitle": "Discover Our Projects",
+  "sectionText": [
+    "Every project we take on matters to us. We approach each job thoroughly, paying close attention to our clients’ ideas, needs, and expectations.",
+    "By working closely together, we ensure the final result is completed with care and in line with your vision"
+  ],
+  "ctaText": "Explore our work and get inspired for your next project. Get in touch to start planning today!",
+  "ctaBtn": {
+    "visible": false,
+    "label": "Contact us",
+    "path": "contacts",
+    "icon": "arrowRightIcon"
+  },
+  "projectsData": [
+    {
+      "id": "1",
+      "name": "construction",
+      "title": "Construction",
+      "icon": "circleMarkIcon",
+      "image": "/src/assets/images/services/thumb-1.jpg",
+      "description": "Building your vision from the ground up",
+      "worksList": []
+    },
+    {
+      "id": "2",
+      "name": "renovation",
+      "title": "Renovation Service",
+      "icon": "circleMarkIcon",
+      "image": "/src/assets/images/services/thumb-2.jpg",
+      "description": "Transforming spaces for modern living",
+      "worksList": []
+    },
+    {
+      "id": "3",
+      "name": "restoration",
+      "title": "Restoration Service",
+      "icon": "circleMarkIcon",
+      "image": "/src/assets/images/services/thumb-3.jpg",
+      "description": "Restoring original character",
+      "worksList": []
+    },
+    {
+      "id": "4",
+      "name": "maintenance",
+      "title": "Maintenance Service",
+      "icon": "circleMarkIcon",
+      "image": "/src/assets/images/services/thumb-4.jpg",
+      "description": "Protecting What Matters",
+      "worksList": []
+    }
+  ]
+}
