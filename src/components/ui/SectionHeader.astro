@@ -1,0 +1,56 @@
+---
+interface Props {
+  sectionId: string;
+  sectionTitle: string;
+  sectionSubtitle: string;
+  sectionText: string[]
+}
+
+const { sectionId,sectionTitle, sectionSubtitle, sectionText } = Astro.props;
+
+const headerStyle = {
+  about: 'lg:items-start justify-center lg:justify-between',
+  services: 'lg:items-center lg:justify-center',
+  projects: 'lg:items-center lg:justify-center',
+  reviews: '',
+}[sectionId];
+
+const headerContentStyle = {
+  about: '2xl:gap-y-24',
+  services: 'lg:max-w-4/5 xl:max-w-3/5 lg:items-center justify-center lg:justify-between',
+  projects: 'lg:max-w-4/5 xl:max-w-3/5 lg:items-center justify-center',
+  reviews: '2xl:gap-y-16',
+}[sectionId];
+
+const sectionSubtitleStyle = {
+  about: '2xl:w-3/4 text-left',
+  services: 'lg:max-w-3/4 xl:max-w-full lg:text-center',
+  projects: 'lg:text-center',
+  reviews: '2xl:w-3/4',
+}[sectionId];
+
+const sectionTextStyle = {
+  about: 'flex flex-col gap-y-4 text-left',
+  services: '2xl:w-3/4 lg:text-center',
+  projects: 'lg:text-center',
+  reviews: '2xl:w-3/4',
+}[sectionId];
+---
+
+<header class={`fade-in-left flex flex-col gap-10 lg:gap-16 2xl:gap-24 ${headerStyle}`}>
+  <h2 class="section-title">
+    {sectionTitle}
+  </h2>
+  <div class={`fade-in-left flex flex-col gap-y-6 lg:gap-y-8 xl:gap-y-10 landscape:max-md:gap-y-8 ${headerContentStyle}`}>
+    <h3 class={`text-primary ${sectionSubtitleStyle}`}>
+      {sectionSubtitle}
+    </h3>
+    <p class={`font-primary ${sectionTextStyle}`}>
+      {sectionText.map(sentence => (
+        <span class="text-xl xl:text-2xl 2xl:text-4xl text-slate-600">
+          {sentence}
+        </span>
+      ))}
+    </p>
+  </div>
+</header>
