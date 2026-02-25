@@ -127,7 +127,7 @@
 @utility fade-in-y {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 @utility fade-up-y {
@@ -135,13 +135,25 @@
   transform: translateY(0);
 }
 
-@utility fade-in-x {
+@utility fade-in-left {
   opacity: 0;
   transform: translateX(-100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+@utility fade-up-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+@utility fade-in-right {
+  opacity: 0;
+  transform: translateX(200px);
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-@utility fade-up-x {
+@utility fade-up-right {
   opacity: 1;
   transform: translateX(0);
 }
