@@ -4,20 +4,20 @@ import AboutSection from "@/components/sections/AboutSection.astro";
 import StatsSection from "@/components/sections/StatsSection.astro";
 import ServicesSection from "@/components/sections/ServicesSection.astro";
 import ProjectsSection from "@/components/sections/ProjectsSection.astro";
-import Reviews from "@/components/sections/Reviews";
+import ReviewsSection from "@/components/sections/ReviewsSection.astro";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 ---
 
-<main>
+<main class="overflow-x-hidden">
   <HeroSection />
   <AboutSection />
   <StatsSection />
   <ServicesSection />
   <ProjectsSection />
-  <Reviews />
+  <ReviewsSection />
   <Faq />
   <Contact />
 </main>  
 
-<script src="../../../src/scripts/animateSection.ts"></script>
+<script src="../../../src/scripts/animateElements.ts"></script>
