@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
 import { getEntry } from 'astro:content';
 import LinkButton from '@/components/ui/LinkButton.astro';
 
@@ -14,13 +15,14 @@ const {sectionId, sectionImage, sectionTitle, sectionSubtitle, sectionText, ctaB
 
 <section id={sectionId} class="section-padding bg-white scroll-mt-10">  
   <div class="page-container">
-    <div class="fade-in-x flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24">
-      <div class="flex-1 flex flex-col lg:items-start justify-center lg:justify-between gap-10 lg:gap-16 xl:gap-24 landscape:max-md:gap-y-8">
-        <h2 class="section-title">{sectionTitle}</h2>
-        <h3 class="2xl:w-3/4 text-left text-primary">{sectionSubtitle}</h3>
-        <div class="flex flex-col gap-y-4 text-left text-slate-600 text-xl md:text-2xl 2xl:text-4xl">
-          {sectionText.map(text => <span>{text}</span>)}
-        </div>
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 2xl:gap-24">
+      <div class="lg:flex-1 flex flex-col lg:items-start lg:justify-between gap-10 lg:gap-16 xl:gap-24 landscape:max-md:gap-y-8">
+        <SectionHeader
+          sectionId={sectionId} 
+          sectionTitle={sectionTitle} 
+          sectionSubtitle={sectionSubtitle} 
+          sectionText={sectionText}
+        />
         {ctaBtn.visible && (
           <LinkButton
             link={ctaBtn} 
@@ -28,12 +30,14 @@ const {sectionId, sectionImage, sectionTitle, sectionSubtitle, sectionText, ctaB
           />
         )}
       </div>
-      <div class="flex-1 2xl:max-h-[85svh] aspect-square landscape:max-md:aspect-video lg:flex lg:justify-center relative">
+      <div class="fade-in-right lg:flex-1 w-full md:max-h-[60svh] lg:max-h-full 2xl:max-h-[80svh] 
+                  aspect-square landscape:max-lg:h-svh 
+                  lg:flex lg:justify-center relative">
         <div class="hidden lg:flex size-full absolute -top-4 -left-4 2xl:-top-8 2xl:-left-8 -z-10 bg-accent rounded-lg" />
         <Image 
           src={sectionImage} 
           alt="hero" 
-          class="size-full object-cover object-center rounded-lg overflow-hidden"
+          class="size-full object-cover object-center rounded-md overflow-hidden"
         />
       </div>
     </div>
