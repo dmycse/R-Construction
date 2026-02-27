@@ -1,7 +1,8 @@
 ---
 import { getEntry } from 'astro:content';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
-import ProjectsList from '@/components/projects/ProjectsList.astro';
+import ProjectsList from '@/components/sections/projects/ProjectsList.astro';
+import SectionFooter from '@/components/ui/SectionFooter.astro';
 
 const projectsEntry = await getEntry('projects', 'projects_data');
 
@@ -9,10 +10,21 @@ if (!projectsEntry) {
   throw new Error("Projects data not found");
 }
 
-const {sectionId, sectionTitle, sectionSubtitle, sectionText, ctaText, projectsData} = projectsEntry.data;
+const {
+  sectionId,
+  sectionTitle,
+  sectionSubtitle,
+  sectionText,
+  ctaText,
+  ctaBtn,
+  projectsData
+} = projectsEntry.data;
 ---
 
-<section id={sectionId} class="section-padding bg-white scroll-mt-10">  
+<section
+  id={sectionId}
+  class="section-padding bg-white scroll-mt-10"
+>  
   <div class="flex flex-col gap-10 lg:gap-16 xl:gap-24">
     <div class="page-container">
       <SectionHeader
@@ -23,10 +35,12 @@ const {sectionId, sectionTitle, sectionSubtitle, sectionText, ctaText, projectsD
       />
     </div>
     <ProjectsList projectsData={projectsData} />
-    <footer class="page-container flex lg:justify-center">
-      <p class="font-primary lg:text-center text-lg md:text-xl 2xl:text-3xl text-slate-600" >
-        {ctaText}
-      </p> 
-    </footer>
+    {(ctaText.visible || ctaBtn.visible) && (
+      <SectionFooter
+        sectionId={sectionId}
+        ctaText={ctaText}
+        ctaBtn={ctaBtn}
+      />
+    )}
   </div>
 </section>

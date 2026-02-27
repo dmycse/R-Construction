@@ -10,15 +10,15 @@ export interface Props {
 const { image, name, description, icon } = Astro.props.projectData;
 ---
 
-<div class="fade-in-right w-full relative">
-  <div class="size-full aspect-square landscape:max-md:aspect-video landscape:max-md:h-svh">
+<div class="fade-in-right w-full grid items-end justify-items-center">
+  <div class="size-full row-start-1 col-start-1 aspect-square landscape:max-md:aspect-video landscape:max-md:h-svh">
     <Image 
       src={image}
       alt={name} 
       class="size-full object-cover object-center"
     />
   </div>
-  <div class="px-2 2xl:px-4 w-full absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+  <div class="p-2 w-full row-start-1 col-start-1">
     <div class="px-3 py-4 2xl:px-4 flex flex-col gap-1 bg-black/30 backdrop-blur-sm rounded-md">
       <p class="text-xl 2xl:text-2xl font-primary font-medium uppercase tracking-[1px] text-white">
         {name}
