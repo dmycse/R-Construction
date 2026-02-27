@@ -1,6 +1,6 @@
 export function initNavLinks(ulSelector: string, onLinkChange?: (id: string) => void, { } = {}) {
 
-  const linksList = document.querySelectorAll(ulSelector) as NodeListOf<HTMLUListElement>;
+  const linksList = document.querySelectorAll<HTMLUListElement>(ulSelector);
   if (linksList.length === 0) return;
 
 
