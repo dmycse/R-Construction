@@ -1,0 +1,24 @@
+---
+import HeroSection from "@/components/sections/hero/HeroSection.astro";
+import AboutSection from "@/components/sections/about/AboutSection.astro";
+import StatsSection from "@/components/sections/stats/StatsSection.astro";
+import ServicesSection from "@/components/sections/services/ServicesSection.astro";
+import ProjectsSection from "@/components/sections/projects/ProjectsSection.astro";
+import ReviewsSection from "@/components/sections/reviews/ReviewsSection.astro";
+import FaqSection from "@/components/sections/faq/FaqSection.astro";
+---
+
+<main class="overflow-x-hidden">
+  <HeroSection />
+  <AboutSection />
+  <StatsSection />
+  <ServicesSection />
+  <ProjectsSection />
+  <ReviewsSection />
+  <FaqSection />
+</main>  
+
+<script>
+  import { animateElements } from '@/scripts/animateElements';
+  animateElements();
+</script>
