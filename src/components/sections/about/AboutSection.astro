@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import SectionHeader from "@/components/ui/SectionHeader.astro";
 import { getEntry } from 'astro:content';
+import SectionHeader from "@/components/ui/SectionHeader.astro";
 import LinkButton from '@/components/ui/LinkButton.astro';
 
 const aboutEntry = await getEntry('about', 'about_data');
@@ -10,10 +10,21 @@ if (!aboutEntry) {
   throw new Error("About data not found");
 }
 
-const {sectionId, sectionImage, sectionTitle, sectionSubtitle, sectionText, ctaBtn} = aboutEntry.data;
+const {
+    sectionId,
+    sectionImage,
+    sectionTitle,
+    sectionSubtitle,
+    sectionText, 
+    ctaText,
+    ctaBtn
+  } = aboutEntry.data;
 ---
 
-<section id={sectionId} class="section-padding bg-white scroll-mt-10">  
+<section 
+  id={sectionId} 
+  class="section-padding bg-white scroll-mt-10"
+>  
   <div class="page-container">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 2xl:gap-24">
       <div class="lg:flex-1 flex flex-col lg:items-start lg:justify-between gap-10 lg:gap-16 xl:gap-24 landscape:max-md:gap-y-8">
