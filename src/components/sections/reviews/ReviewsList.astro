@@ -1,0 +1,16 @@
+---
+import type { ReviewsDataSchema } from '@/content/config';
+import ReviewItem from '@/components/sections/reviews/ReviewItem.astro';
+import ReviewButtons from '@/components/sections/reviews/ReviewButtons.astro';
+
+interface Props {
+  reviewsData: ReviewsDataSchema['reviewsData'];
+}
+
+const { reviewsData } = Astro.props;
+---
+
+<div class="xl:row-span-2 lg:my-8 xl:my-0 flex flex-col xl:justify-end gap-4 lg:gap-6 relative">
+  {reviewsData.map(reviewData => <ReviewItem reviewData={reviewData} />)}
+  <ReviewButtons />
+</div>
