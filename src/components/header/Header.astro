@@ -18,12 +18,14 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
 <header class="sticky top-0 z-50 bg-primary">
   <div class="size-full relative">
     <div class="page-container py-4">
-      <div class="flex items-center justify-between">
-        {logo.visible && (
-          <a href={`#${logo.path}`}>
-            <Image src={logo.image} alt={logo.name} />
-          </a>
-        )}
+      <div class="flex items-center">
+        <div class="shrink-0 mr-auto">
+          {logo.visible && (
+            <a href={`#${logo.path}`}>
+              <Image src={logo.image} alt={logo.name} />
+            </a>
+          )}
+        </div>
         <NavDesktop
           links={links} 
           className="max-lg:hidden" 
