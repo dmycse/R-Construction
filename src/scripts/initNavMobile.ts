@@ -1,7 +1,7 @@
 export function initNavMobile(menuContainer: HTMLElement) {
 
-  const btn = menuContainer.querySelector('button');
-  const overlay = menuContainer.querySelector('[data-menu-overlay]');
+  const btn = menuContainer.querySelector<HTMLButtonElement>('button');
+  const overlay = menuContainer.querySelector<HTMLDivElement>('[data-menu-overlay]');
   if (!btn || !overlay) return;
 
   const toggleMenu = (forceState?: boolean) => {
