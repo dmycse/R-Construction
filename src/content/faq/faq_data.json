@@ -1,0 +1,58 @@
+{
+  "title": "Faq",
+  "sectionId": "faq",
+  "sectionTitle": "Questions & Answers",
+  "sectionSubtitle": "Got Questions? We've Got You Covered",
+  "sectionText": [
+    "From work planning to final touches, we've answered the most common questions to help you make informed decisions."
+  ],
+  "faqData": [
+    {
+      "id": 1,
+      "question": "What types of projects do you handle?",
+      "answer": [
+        "We carry out a wide range of construction, renovation, restoration, and maintenance works.",
+        "This includes masonry, structural repairs, painting, and outdoor improvements for residential properties."
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Do you provide free estimates?",
+      "answer": [
+        "Yes, we offer free consultations and estimates after assessing the scope of the project.",
+        "This allows us to provide clear pricing and realistic timelines."
+      ]
+    },
+    {
+      "id": 3,
+      "question": "How long will my project take?",
+      "answer": [
+        "The duration depends on the size and complexity of the work.",
+        "After reviewing the details, we provide a clear schedule and keep you informed throughout the process."
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Do you help with planning and material selection?",
+      "answer": [
+        "Yes, we assist with project planning and help you choose suitable, durable materials.",
+        "If required, we can also take care of the entire process — from selecting and ordering the necessary materials to arranging their delivery to the site — ensuring everything is ready for the work to proceed smoothly."
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Can you handle a project from start to finish?",
+      "answer": [
+        "Yes, we can manage your project from start to finish, taking care of every stage to ensure consistent quality and timely completion."
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How do I get started?",
+      "answer": [
+        "Simply contact us to discuss your project.",
+        "We will arrange a site visit, review your requirements, and provide a detailed estimate."
+      ]
+    }
+  ]
+}
