@@ -1,0 +1,58 @@
+---
+import IconComponent from "@/components/ui/IconComponent.astro";
+
+interface Props {
+  id: number;
+  question: string;
+  answer: string[];
+};
+
+const { id, question, answer } = Astro.props;
+--- 
+ 
+<div
+  data-faq-item
+  data-faq-state="closed"
+  class="group/faq py-6 lg:p-8 2xl:p-10 flex flex-col relative 
+         after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2
+         after:h-px after:w-[95%] after:bg-slate-200"
+>
+  <button
+    id={`faq-question-${id}`}
+
+    aria-expanded="false"
+    aria-controls={`faq-answer-${id}`} 
+    class="flex items-center justify-between gap-4"
+  >
+    <span class="flex-1 text-left text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-slate-700 font-bold leading-[120%] tracking-[1px]">
+      {question}
+    </span>
+    <span 
+      aria-hidden="true" 
+      class="p-3 lg:p-4 inline-flex items-center justify-center text-primary rounded-md bg-accent"
+    >
+      <IconComponent 
+        name='arrowDownIcon' 
+        className=`size-5 lg:size-6 2xl:size-7
+                  rotate-90 group-data-[faq-state=open]/faq:rotate-0 
+                  transition-transform duration-500 ease`
+      />
+    </span>
+  </button>
+  <div
+    id={`faq-answer-${id}`}
+    role="region"
+    aria-labelledby={`faq-question-${id}`} 
+    class="grid grid-rows-[0fr] opaсity-0
+          transition-[grid-template-rows,opacity] duration-500 ease-out
+          group-data-[faq-state=open]/faq:grid-rows-[1fr] 
+          group-data-[faq-state=open]/faq:opacity-100 
+          group-data-[faq-state=open]/faq:delay-200"
+  >
+    <div class="overflow-hidden">
+      <p class="pt-5 text-justify text-xl 2xl:text-2xl text-dark font-main font-normal">
+        {answer}
+      </p>
+    </div>
+  </div>
+</div>
