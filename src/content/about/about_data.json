@@ -9,6 +9,10 @@
     "Whether upgrading a residence, restoring older structures, or enhancing outdoor areas, we provide practical solutions designed for durability and long-term performance."
   ],
   "sectionImage": "/src/assets/images/about/about.jpg",
+  "ctaText": {
+    "visible": false,
+    "text": ""
+  },
   "ctaBtn": {
     "visible": true,
     "label": "See Our Work",
