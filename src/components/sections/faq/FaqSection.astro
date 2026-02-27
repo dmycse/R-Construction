@@ -1,0 +1,35 @@
+---
+import { getEntry } from 'astro:content';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import FaqList from '@/components/sections/faq/FaqList.astro';
+
+const faqEntry = await getEntry('faq', 'faq_data');
+
+if (!faqEntry) {
+  throw new Error("Faq data not found");
+}
+
+const {sectionId, sectionTitle, sectionSubtitle, sectionText, faqData} = faqEntry.data;
+---
+
+<section
+  id={sectionId} 
+  class="section-padding bg-white scroll-mt-10"
+>
+  <div class="page-container">  
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 md:gap-y-10 lg:gap-x-10 2xl:gap-16">
+      <SectionHeader
+        sectionId={sectionId} 
+        sectionTitle={sectionTitle} 
+        sectionSubtitle={sectionSubtitle} 
+        sectionText={sectionText}
+      />
+      <FaqList faqData={faqData} />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { faqAccordion } from '@/scripts/faqAccordion';
+  faqAccordion();
+</script>
