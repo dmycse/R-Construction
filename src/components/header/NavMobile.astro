@@ -50,10 +50,9 @@ const { links, icons, className } = Astro.props;
 </div>
 
 <script>
-  import { initNavMobile } from '../../../src/scripts/initNavMobile';
+  import { initNavMobile } from '@/scripts/initNavMobile';
   document.querySelectorAll('[data-menu-container]').forEach(container => {
     if (!container) return;
     initNavMobile(container as HTMLElement);
   });
 </script>
- 
