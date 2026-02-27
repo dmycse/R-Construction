@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import SectionFooter from '@/components/ui/SectionFooter.astro';
+import ReviewsList from '@/components/sections/reviews/ReviewsList.astro';
+
+const reviewsEntry = await getEntry('reviews', 'reviews_data');
+
+if (!reviewsEntry) {
+  throw new Error("Reviews data not found");
+}
+
+const {
+  sectionId,
+  sectionTitle,
+  sectionSubtitle,
+  sectionText,
+  ctaText,
+  ctaBtn,
+  reviewsData
+} = reviewsEntry.data;
+---
+
+<section
+  id={sectionId}
+  aria-labelledby={sectionTitle} 
+  class="section-padding bg-slate-50 scroll-mt-10"
+>
+  <div class="page-container">  
+    <div class="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-[1fr_auto] gap-10 xl:gap-x-20 xl:gap-y-30 2xl:gap-y-40">
+      <SectionHeader
+        sectionId={sectionId} 
+        sectionTitle={sectionTitle} 
+        sectionSubtitle={sectionSubtitle} 
+        sectionText={sectionText}
+      />
+      <ReviewsList reviewsData={reviewsData} />
+      {(ctaText.visible || ctaBtn.visible) && (
+        <SectionFooter
+          sectionId={sectionId}
+          ctaText={ctaText}
+          ctaBtn={ctaBtn}
+        />
+      )}
+    </div> 
+  </div>
+</section>
