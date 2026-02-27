@@ -7,7 +7,10 @@
     "Every project we take on matters to us. We approach each job thoroughly, paying close attention to our clients’ ideas, needs, and expectations.",
     "By working closely together, we ensure the final result is completed with care and in line with your vision."
   ],
-  "ctaText": "Explore our work and get inspired for your next project. Get in touch to start planning today!",
+  "ctaText": {
+    "visible": true, 
+    "text": "Explore our work and get inspired for your next project. Get in touch to start planning today!"
+  },
   "ctaBtn": {
     "visible": false,
     "label": "Contact us",
@@ -16,7 +19,7 @@
   },
   "projectsData": [
     {
-      "id": "1",
+      "id": 1,
       "name": "construction",
       "title": "Construction",
       "icon": "circleMarkIcon",
@@ -25,7 +28,7 @@
       "worksList": []
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "renovation",
       "title": "Renovation Service",
       "icon": "circleMarkIcon",
@@ -34,7 +37,7 @@
       "worksList": []
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "restoration",
       "title": "Restoration Service",
       "icon": "circleMarkIcon",
@@ -43,7 +46,7 @@
       "worksList": []
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "maintenance",
       "title": "Maintenance Service",
       "icon": "circleMarkIcon",
