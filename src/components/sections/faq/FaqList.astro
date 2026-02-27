@@ -1,0 +1,16 @@
+---
+import type { FaqDataSchema } from '@/content/config';
+import FaqItem from '@/components/sections/faq/FaqItem.astro';
+
+interface Props {
+  faqData: FaqDataSchema['faqData'];
+};
+
+const { faqData } = Astro.props;
+---
+
+<div
+  data-faq-list
+  class="fade-in-right flex flex-col gap-y-2 md:gap-y-4">
+  {faqData.map(item => <FaqItem {...item} />)}
+</div> 
