@@ -2,27 +2,28 @@
   "title": "Stats",
   "sectionId": "stats",
   "sectionTitle": "Stats",
+  "sectionSubtitle": "",
   "statsData": [
     {
-      "id": "stat1",
+      "id": 1,
       "countNum": 97,
       "countText": "%",
       "text": "Customer Satisfaction"
     },
     {
-      "id": "stat2",
+      "id": 2,
       "countNum": 100,
       "countText": "+",
       "text": "Successful Projects"
     },
     {
-      "id": "stat3",
+      "id": 3,
       "countNum": 70,
       "countText": "+",
       "text": "Happy Clients"
     },
     {
-      "id": "stat4",
+      "id": 4,
       "countNum": 10,
       "countText": "+",
       "text": "Years of Experience"
