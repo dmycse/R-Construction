@@ -1,0 +1,46 @@
+{
+  "title": "Reviews",
+  "sectionId": "reviews",
+  "sectionTitle": "Testimonials",
+  "sectionSubtitle": "Reliable Work You Can Count On",
+  "sectionText": [
+    "From private homes to renovation projects of all sizes, our clients share their experience of working with us.",
+    "Read their feedback and see the results of our work."
+  ],
+  "ctaText": {
+    "visible": true,
+    "text": "Looking for reliable construction and renovation services in Apokoronas? Contact us today to discuss your project."
+  },
+  "ctaBtn": {
+    "visible": true,
+    "label": "Contact us",
+    "path": "contacts",
+    "icon": "arrowRightIcon"
+  },
+  "reviewsData": [
+    {
+      "id": 1,
+      "name": "John",
+      "location": "Athens",
+      "time": "October 2025",
+      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
+      "image": "/src/assets/images/services/thumb-6.webp"
+    },
+    {
+      "id": 2,
+      "name": "Martin",
+      "location": "Thessaloniki",
+      "time": "August 2025",
+      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
+      "image": "/src/assets/images/services/thumb-6.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Anna",
+      "location": "Kerkira",
+      "time": "May 2025",
+      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
+      "image": "/src/assets/images/services/thumb-6.jpg"
+    }
+  ]
+}
