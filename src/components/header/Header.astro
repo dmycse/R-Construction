@@ -4,7 +4,6 @@ import { getEntry } from 'astro:content';
 
 import NavDesktop from '@/components/header/NavDesktop.astro';
 import NavMobile from '@/components/header/NavMobile.astro';
-import LinkButton from '@/components/ui/LinkButton.astro';
 
 const headerEntry = await getEntry('header', 'header_data');
 
@@ -21,36 +20,24 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
       <div class="flex items-center">
         <div class="shrink-0 mr-auto">
           {logo.visible && (
-            <a href={`#${logo.path}`}>
-              <Image src={logo.image} alt={logo.name} />
+            <a href={`#${logo.path}`} class="block w-auto h-14 md:h-16">
+              <Image 
+                src={logo.image}
+                alt={logo.name}
+                class="size-full object-cover"
+              />
             </a>
           )}
         </div>
         <NavDesktop
           links={links} 
           className="max-lg:hidden" 
-        >
-          {ctaBtn.visible && (
-            <LinkButton 
-              link={ctaBtn} 
-              linkStyle="px-1 py-0.5 bg-white"
-              labelStyle="lg:text-base xl:text-lg 2xl:text-xl" 
-            />
-          )}
-        </NavDesktop>
+        />
         <NavMobile
           links={links}
           icons={mobileIcons}
           className="lg:hidden"
-        >
-          {ctaBtn.visible && (
-            <LinkButton 
-              link={ctaBtn} 
-              linkStyle="pl-2 pr-1 py-0.5 bg-white"
-              labelStyle="text-xl lg:text-base"
-            />
-          )}
-        </NavMobile>
+        />
       </div>
     </div>
   </div>
