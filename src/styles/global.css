@@ -5,16 +5,13 @@
   --font-primary: "DM Sans", system-ui, sans-serif;
   --font-secondary: "Barlow", system-ui, sans-serif;
 
-  --color-primary: #121315;
+  --color-primary: #020100;
   --color-secondary: #666666;
   --color-tertiary: var(--color-amber-200);
   --color-accent: var(--color-amber-300);
   --color-border: #d7d7d7;
 
   --shadow-custom: "0px 4px 54px 10px rgba(18, 19, 21, 0.06)";
-
-  --bg-hero: url("/images/hero/bg.jpg");
-
   --breakpoint-3xl: 108rem;
   --breakpoint-4xl: 120rem;
   --breakpoint-5xl: 160rem;
@@ -85,6 +82,10 @@
 @layer components {
   .section-padding {
     @apply py-16 xl:py-24;
+  }
+
+  .section-bg {
+    @apply bg-orange-50;
   }
 
   .section-title {
