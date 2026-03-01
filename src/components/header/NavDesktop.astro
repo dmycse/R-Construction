@@ -1,12 +1,9 @@
 ---
+import type { HeaderDataSchema } from "@/content/config";
 import NavLinks from "@/components/header/NavLinks.astro";
 
 interface Props {
-  links: {
-    visible: boolean;
-    name: string;
-    path: string;
-  }[];
+  links: HeaderDataSchema['links'];
   className?: string,
 };
 
