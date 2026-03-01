@@ -1,0 +1,53 @@
+{
+  "title": "Contacts",
+  "sectionId": "contacts",
+  "sectionTitle": "Start Your Project",
+  "sectionSubtitle": "Contact Us",
+  "sectionText": [
+    "Got a project in mind?",
+    "Let's build it together.",
+    "Reach out and let our team to bring your vision to life."
+  ],
+  "contactsData": [
+    {
+      "id": 1,
+      "title": "Chat with us",
+      "subtitleText": "Send us a message by WhatsApp.",
+      "contactInfo": {
+        "label": "+30 694 606 93 94",
+        "href": "https://wa.me/+306946069394",
+        "icon": "whatsAppIcon"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Call us",
+      "subtitleText": "Give us a call.",
+      "contactInfo": {
+        "label": "+30 694 606 93 94",
+        "href": "tel:+306946069394",
+        "icon": "phoneIcon"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Email Us",
+      "subtitleText": "Send us email.",
+      "contactInfo": {
+        "label": "R.Construction@gmail.com",
+        "href": "mailto:r.construction@gmail.com",
+        "icon": "emailIcon"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Follow Us",
+      "subtitleText": "Visit our Facebook page.",
+      "contactInfo": {
+        "label": "R-Construction",
+        "href": "https://www.facebook.com/yourbusinessname",
+        "icon": "facebookIcon"
+      }
+    }
+  ]
+}
