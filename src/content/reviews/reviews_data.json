@@ -21,7 +21,7 @@
     {
       "id": 1,
       "name": "John",
-      "location": "Athens",
+      "location": "Chalandri",
       "time": "October 2025",
       "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
       "image": "/src/assets/images/services/thumb-6.webp"
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "name": "Martin",
-      "location": "Thessaloniki",
+      "location": "Agia Paraskevi",
       "time": "August 2025",
       "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
       "image": "/src/assets/images/services/thumb-6.jpg"
@@ -37,7 +37,7 @@
     {
       "id": 3,
       "name": "Anna",
-      "location": "Kerkira",
+      "location": "Nea Smyrni",
       "time": "May 2025",
       "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
       "image": "/src/assets/images/services/thumb-6.jpg"
