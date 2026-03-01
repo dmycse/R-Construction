@@ -1,65 +1,80 @@
 export function initNavLinks(ulSelector: string, onLinkChange?: (id: string) => void, { } = {}) {
 
-  const linksList = document.querySelectorAll<HTMLUListElement>(ulSelector);
-  if (linksList.length === 0) return;
+  // find all links from all menus (desktop, mobile, footer)
+  const headerLinks = document.querySelectorAll<HTMLAnchorElement>(`header ${ulSelector} a`);
+  if (headerLinks.length === 0) return;
 
+  // create Map: sectionId -> { section, links[] }
+  const linksMap = new Map<string, 
+    { 
+      section: HTMLElement, 
+      links: HTMLAnchorElement[] 
+    }
+  >();
 
-  const links: HTMLAnchorElement[] = [];
-  
-  linksList.forEach(ul => {
-    links.push(...Array.from(ul.querySelectorAll<HTMLAnchorElement>('a[data-path]')));
-  });
-  
-  if (links.length === 0) return;
+  headerLinks.forEach(link => {
+    const id = link.dataset.path;
+    if (!id) return;
 
-  const menuIds = [...new Set(links.map(a => a.dataset.path))] as string[];
-  const topSectionId = menuIds[0] || 'home';
+    link.dataset.active = 'false';
 
-  let activeId = '';
-
-  const setActiveLink = (id: string) => {
-    if (activeId === id) return;
-    activeId = id;
-
-    links.forEach(link => {
-      if (link.dataset.path === id) {
-        link.classList.add('text-accent', 'font-semibold');
-        link.classList.remove('text-white', 'font-normal');
-      } else {
-        link.classList.remove('text-accent', 'font-semibold');
-        link.classList.add('text-white', 'font-normal');
+    if (!linksMap.has(id)) {
+      const section = document.getElementById(id) as HTMLElement;
+      
+      if (section) {
+        linksMap.set(id, {section, links: [link]});
       }
-    });
+
+    } 
+    else {
+      linksMap.get(id)!.links.push(link);
+    }
+  })
+
+  if (linksMap.size === 0) return;
+  
+  const topSectionId = Array.from(linksMap.keys())[0];
+  let activeId: string | null = null;
+
+  const setActiveLink = (newId: string) => {
+    if (activeId === newId) return;
+    
+    if (activeId && linksMap.has(activeId)) {
+      linksMap.get(activeId)!.links.forEach(link => link.dataset.active = 'false');
+    }
+
+    activeId = newId;
+    const currentElement = linksMap.get(activeId);
+    if (currentElement) {
+      currentElement.links.forEach(link => link.dataset.active = 'true');
+    }
 
     // update hash
-    if (id === topSectionId) {
+    if (activeId === topSectionId) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       history.replaceState(null, '', window.location.pathname);
     } else {
-      const newHash = `#${id}`;
+      const newHash = `#${activeId}`;
       if (window.location.hash !== newHash) {
         history.replaceState(null, '', newHash);
       }
     }
 
     // callback when active link changes
-    if (typeof onLinkChange === 'function') {
-      onLinkChange(id);
-    }
+    // don't use now
+    // if (typeof onLinkChange === 'function') {
+    //   onLinkChange(newId);
+    // }
   };
-
-  const sections = menuIds
-                  .map(id => document.getElementById(id))
-                  .filter(Boolean) as HTMLElement[];
-
-  if (!sections.length) return;
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
-        if (menuIds.includes(id)) {
-          setActiveLink(id);
-        }
+        setActiveLink(id);
       }
     });
   },
@@ -70,5 +85,5 @@ export function initNavLinks(ulSelector: string, onLinkChange?: (id: string) => 
     // create a line in the middle of the screen
   });
 
-  sections.forEach(section => observer.observe(section));
+  linksMap.forEach(item => observer.observe(item.section));
 }
