@@ -1,17 +1,11 @@
 ---
+import type { HeaderDataSchema } from "@/content/config";
 import NavMobileBtn from "@/components/header/NavMobileBtn.astro";
 import NavLinks from "@/components/header/NavLinks.astro";
 
 interface Props {
-  links: {
-    visible: boolean;
-    name: string;
-    path: string;
-  }[];
-  icons: {
-    open: string;
-    close: string;
-  };
+  links: HeaderDataSchema['links']
+  icons: HeaderDataSchema['mobileIcons']
   className?: string,
 };
 
@@ -43,9 +37,8 @@ const { links, icons, className } = Astro.props;
   >
     <NavLinks 
       links={links} 
-      ulStyle="p-12 flex items-center flex-col landscape:flex-row gap-y-12 sm:gap-x-10 text-center"
+      ulStyle="p-12 grid grid-cols-1 items-center landscape:grid-cols-2 gap-y-12 sm:gap-x-16 text-center"
     />
-    <slot />
   </nav>
 </div>
 
