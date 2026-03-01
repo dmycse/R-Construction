@@ -23,21 +23,21 @@
       "name": "email",
       "icon": "emailIcon",
       "text": "",
-      "url": "#"
+      "url": "mailto:r.construction@gmail.com"
     },
     {
       "visible": true,
       "name": "facebook",
       "icon": "facebookIcon",
       "text": "",
-      "url": "#"
+      "url": "#!"
     },
     {
       "visible": true,
       "name": "instagram",
       "icon": "instagramIcon",
       "text": "",
-      "url": "#"
+      "url": "#!"
     }
   ]
 }
