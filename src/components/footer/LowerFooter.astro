@@ -1,0 +1,25 @@
+---
+import type { FooterDataSchema } from "@/content/config";
+
+interface Props {
+  content: FooterDataSchema['lowerFooter']['content'];
+}
+
+const {text, link, creator, creatorLink} = Astro.props.content
+---
+
+<div class="pb-6 flex flex-col items-center justify-center gap-4 xl:gap-6">
+  <div class="font-main text-white uppercase leading-[125%] tracking-[1px]">
+    <small class="text-xs">{text}</small>
+  </div> 
+  <a 
+    href={link}
+    target="_blank"
+    rel='noopener noreferrer'
+    aria-label="Email address of {content.creator} link" 
+    class="flex gap-0 items-center text-xs border-2 border-gray-500"
+  >
+    <span class="px-2 py-1 font-normal text-white uppercase bg-primary">{creator.split(' ')[0]}</span>
+    <span class="p-1 font-normal text-primary bg-white">{creator.split(' ')[1]}</span>
+  </a> 
+</div>
