@@ -1,0 +1,27 @@
+{
+  "title": "Footer",
+  "sectionId": "footer",
+  "sectionTitle": "Footer",
+  "sectionSubtitle": "UrbanBuild",
+  "sectionText": [
+    "Your reliable partner for construction projects, delivering consistent quality from start to finish."
+  ],
+  "privacyPolicy": {
+    "visible": true,
+    "title": "Privacy Policy",
+    "content": [
+      "Your privacy is fully protected. We do not use cookies, and we do not collect, process, or share your personal data. ",
+      "Browsing this website is completely safe and anonymous."
+    ]
+  },
+  "lowerFooter": {
+    "visible": true,
+    "content": {
+      "text": "© 2026 R-Construction · All rights reserved",
+      "link": "#",
+      "creator": "DMY WebDev",
+      "creatorLink": "mailto:dmycse@gmail.com"
+    }
+  }
+
+}

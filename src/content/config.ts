@@ -154,16 +154,55 @@ export const reviewsData = defineCollection({
 
 export const faqData = defineCollection({
   type: 'data',
-  schema: ({ image }) => 
-    sectionHeaderSchema
-      .extend({
-        sectionText: z.array(z.string()),
-        faqData: z.array(z.object({
-          id: z.number(),
-          question: z.string(),
-          answer: z.array(z.string())
-        }))
-      })
+  schema: sectionHeaderSchema
+    .extend({
+      sectionText: z.array(z.string()),
+      faqData: z.array(z.object({
+        id: z.number(),
+        question: z.string(),
+        answer: z.array(z.string())
+      }))
+    })
+});
+
+export const contactsData = defineCollection({
+  type: 'data',
+  schema: sectionHeaderSchema
+    .extend({
+      sectionText: z.array(z.string()),
+      contactsData: z.array(z.object({
+        id: z.number(),
+        title: z.string(),
+        subtitleText: z.string(),
+        contactInfo: z.object({
+          label: z.string(),
+          href: z.string(),
+          icon: z.string()
+        })
+      }))
+    })
+});
+
+export const footerData = defineCollection({
+  type: 'data',
+  schema: sectionHeaderSchema
+    .extend({
+      sectionText: z.array(z.string()),
+      privacyPolicy: z.object({
+        visible: z.boolean(),
+        title: z.string(),
+        content: z.array(z.string())
+      }),
+      lowerFooter: z.object({
+        visible: z.boolean(),
+        content: z.object({
+          text: z.string(),
+          link: z.string(),
+          creator: z.string(),
+          creatorLink: z.string()
+        })
+      })  
+    })
 });
 
 export const collections = {
@@ -175,7 +214,9 @@ export const collections = {
   'services': servicesData,
   'projects': projectsData,
   'reviews': reviewsData,
-  'faq': faqData
+  'faq': faqData,
+  'contacts': contactsData,
+  'footer': footerData
 };
 
 export type CtaDataSchema = z.infer<typeof ctaSchema>;
@@ -183,8 +224,10 @@ export type CtaDataSchema = z.infer<typeof ctaSchema>;
 type TobBarSchema = InferEntrySchema<'topbar'>;
 export type ContactsType = TobBarSchema['contacts'];
 
-export type StatsDataSchema = InferEntrySchema<'stats'>;
+export type HeaderDataSchema = InferEntrySchema<'header'>;
 export type ServicesDataSchema = InferEntrySchema<'services'>;
 export type ProjectsDataSchema = InferEntrySchema<'projects'>;
 export type ReviewsDataSchema = InferEntrySchema<'reviews'>;
 export type FaqDataSchema = InferEntrySchema<'faq'>;
+export type ContactsDataSchema = InferEntrySchema<'contacts'>;
+export type FooterDataSchema = InferEntrySchema<'footer'>;
