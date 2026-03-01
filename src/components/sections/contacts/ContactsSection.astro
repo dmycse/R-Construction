@@ -1,0 +1,30 @@
+---
+import { getEntry } from 'astro:content';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import ContactsList from '@/components/sections/contacts/ContactsList.astro';
+
+const contactsEntry = await getEntry('contacts', 'contacts_data');
+
+if (!contactsEntry) {
+  throw new Error("Contacts data not found");
+}
+
+const {sectionId, sectionTitle, sectionSubtitle, sectionText, contactsData} = contactsEntry.data;
+---
+
+<section
+  id={sectionId} 
+  class="section-padding section-bg scroll-mt-10"
+>
+  <div class="page-container">  
+    <div class="grid grid-cols-1 xl:grid-cols-[auto_auto] gap-y-8 md:gap-y-10 lg:gap-x-10 2xl:gap-x-16">
+      <SectionHeader
+        sectionId={sectionId} 
+        sectionTitle={sectionTitle} 
+        sectionSubtitle={sectionSubtitle} 
+        sectionText={sectionText}
+      />
+     <ContactsList contacts={contactsData} />
+    </div>
+  </div>
+</section>
