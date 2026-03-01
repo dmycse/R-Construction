@@ -1,10 +1,8 @@
 ---
+import type { HeaderDataSchema } from "@/content/config";
+
 interface Props {
-  links: {
-    name: string,
-    path: string,
-    visible: boolean
-  }[];
+  links: HeaderDataSchema['links'];
   ulStyle?: string;
   liStyle?: string;
 }
@@ -19,7 +17,9 @@ const { links, ulStyle = "", liStyle = "" } = Astro.props;
         href={`#${link.path}`} 
         data-path={link.path}
         data-menu-close 
-        class="text-white text-xl uppercase tracking-wider hover:text-tertiary"
+        class="text-white text-xl font-normal uppercase tracking-wider hover:text-tertiary
+               data-[active=true]:text-accent data-[active=true]:font-semibold
+               transition-colors duration-300 ease-in-out"
       >
         {link.name}
       </a>
