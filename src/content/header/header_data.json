@@ -30,6 +30,11 @@
     },
     {
       "visible": true,
+      "name": "Reviews",
+      "path": "reviews"
+    },
+    {
+      "visible": true,
       "name": "Contacts",
       "path": "contacts"
     }
