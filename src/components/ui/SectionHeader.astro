@@ -6,7 +6,7 @@ interface Props {
   sectionText: string[]
 }
 
-const { sectionId,sectionTitle, sectionSubtitle, sectionText } = Astro.props;
+const { sectionId, sectionTitle, sectionSubtitle, sectionText } = Astro.props;
 
 const stylesConfig = {
   about: {
@@ -28,10 +28,12 @@ const stylesConfig = {
     sectionTextStyle: 'lg:text-center',
   },
   reviews: {
-    headerStyle: '',
     headerContentStyle: '2xl:gap-y-16',
     sectionSubtitleStyle: '2xl:w-3/4',
     sectionTextStyle: '2xl:w-3/4',
+  },
+  contacts: {
+    sectionTextStyle: 'flex flex-col gap-y-1 text-left',
   },
 }[sectionId];
 ---
