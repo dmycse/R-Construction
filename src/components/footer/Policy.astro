@@ -1,0 +1,18 @@
+---
+import type { FooterDataSchema } from "@/content/config";
+
+interface Props {
+  policy: FooterDataSchema['privacyPolicy'];
+}
+
+const { policy } = Astro.props
+---
+
+<article class="px-4 md:px-6 xl:px-2 flex flex-col lg:items-center  justify-center gap-y-8">
+  <hr class="w-full text-slate-800" />
+  <p class="lg:max-w-4/5 xl:max-w-3/5 text-justify md:text-center text-lg lg:text-xl text-slate-200">
+    {policy.content}
+  </p>
+  <hr class="w-full text-slate-800" />
+</article>
+
