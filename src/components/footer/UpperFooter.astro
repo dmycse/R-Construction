@@ -1,0 +1,29 @@
+---
+import type { HeaderDataSchema } from "@/content/config";
+import NavLinks from "@/components/header/NavLinks.astro";
+import { Image } from 'astro:assets';
+
+interface Props {
+  logo: HeaderDataSchema['logo'];
+  links: HeaderDataSchema['links'];
+}
+
+const {logo, links} = Astro.props
+---
+
+<div class="pt-10 xl:py-16 flex flex-col items-center xl:justify-center gap-y-8 sm:gap-y-16 xl:gap-y-24">
+  {logo.visible && (
+    <div class="flex justify-center max-h-14 2xl:max-h-24">
+      <Image
+        src={logo.image}
+        alt={logo.name}
+        class="size-full object-cover"
+      />
+    </div>
+    <NavLinks 
+      links={links} 
+      ulStyle={`p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6
+                place-items-start xl:place-items-center gap-12 lg:gap-x-20`}
+    />
+  )}
+</div>
