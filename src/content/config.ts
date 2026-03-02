@@ -146,7 +146,6 @@ export const reviewsData = defineCollection({
           location: z.string(),
           time: z.string(),
           text: z.string(),
-          image: image().optional()
         }))
       })
       .merge(ctaSchema)
