@@ -50,8 +50,8 @@ const { id, question, answer } = Astro.props;
           group-data-[faq-state=open]/faq:delay-200"
   >
     <div class="overflow-hidden">
-      <p class="pt-5 text-justify text-xl 2xl:text-2xl text-dark font-main font-normal">
-        {answer}
+      <p class="pt-5 space-x-1 text-xl 2xl:text-2xl text-dark font-main font-normal">
+        {answer.map(item => <span>{item}</span>)}
       </p>
     </div>
   </div>
