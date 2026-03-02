@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { ReviewsDataSchema } from '@/content/config';
 import IconComponent from '@/components/ui/IconComponent.astro';
 
@@ -7,17 +6,19 @@ interface Props {
   reviewData: ReviewsDataSchema['reviewsData'][number];
 }
 
-const { text, name, location, time, image } = Astro.props.reviewData;
+const { text, name, location, time } = Astro.props.reviewData;
 ---
 
 <div 
-  class="fade-in-right xl:-ml-10 pt-8 pb-4 pl-8 pr-4 md:max-w-4/5 lg:max-w-3/5 xl:max-w-4/5 
-        flex flex-col gap-8 2xl:gap-16 bg-white rounded-md relative lg:z-10">
-  <span class="absolute -top-8 left-8 p-2 inline-flex items-center justify-center">
+  data-review
+  class="shrink-0 size-full pt-8 pb-4 pl-8 pr-4 
+        flex flex-col justify-between gap-8 2xl:gap-16 bg-white rounded-md relative"
+>
+  <span class="absolute -top-8 left-8 z-10 p-2 inline-flex items-center justify-center">
     <IconComponent 
       name="quoteIcon"
       className="size-14"
-    />
+  />
   </span>
   <p class="text-lg md:text-xl 2xl:text-2xl">{text}</p>
   <p class="flex items-center gap-1 text-lg md:text-xl 2xl:text-2xl">
@@ -25,13 +26,4 @@ const { text, name, location, time, image } = Astro.props.reviewData;
     <span>({location}), </span>
     <span>{time}</span>
   </p>
-</div>
-<div
-  class="max-lg:hidden xl:pt-30 lg:w-2/5 xl:size-full xl:max-w-4/5 aspect-square
-        absolute -top-20 right-10 xl:-top-10 xl:right-0 z-0 rounded-md">
-  <Image
-    src={image as ImageMetadata}
-    alt={name} 
-    class="size-full object-cover object-center rounded-md"
-  />
 </div>
