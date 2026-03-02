@@ -23,8 +23,8 @@
       "title": "Construction Service",
       "icon": "constructionIcon",
       "images": [
-        "/src/assets/images/services/thumb-1.jpg",
-        "/src/assets/images/services/thumb-2.jpg"
+        "/src/assets/images/services/thumb-1.webp",
+        "/src/assets/images/services/thumb-9.webp"
       ],
       "description": "We approach every project with care and attention to detail, ensuring every project is strong, durable, and made to last. From the very beginning of the project to the final finishing touches, we transform your ideas into reality.",
       "serviceList": [
@@ -42,8 +42,8 @@
       "title": "Renovation Service",
       "icon": "wallFillIcon",
       "images": [
-        "/src/assets/images/services/thumb-3.jpg",
-        "/src/assets/images/services/thumb-4.jpg"
+        "/src/assets/images/services/thumb-4.webp",
+        "/src/assets/images/services/thumb-5.webp"
       ],
       "description": "We upgrade and improve spaces with practical design and skilled workmanship. From home renovations to outdoor space remodels, we deliver results that enhance both function and appearance.",
       "serviceList": [
@@ -61,8 +61,8 @@
       "title": "Restoration Service",
       "icon": "paintRollerIcon",
       "images": [
-        "/src/assets/images/services/thumb-5.jpg",
-        "/src/assets/images/services/thumb-6.jpg"
+        "/src/assets/images/services/thumb-2.webp",
+        "/src/assets/images/services/thumb-3.webp"
       ],
       "description": "We restore ageing and damaged structures with care. From wind and fire damage to flooding and earthquake impact, we repair and rebuild properties to ensure safety, stability, and long-term durability.",
       "serviceList": [
@@ -80,8 +80,8 @@
       "title": "Maintenance Service",
       "icon": "hammerWrenchIcon",
       "images": [
-        "/src/assets/images/services/thumb-3.jpg",
-        "/src/assets/images/services/thumb-5.jpg"
+        "/src/assets/images/services/thumb-7.webp",
+        "/src/assets/images/services/thumb-8.webp"
       ],
       "description": "We provide reliable property maintenance services to keep buildings and outdoor spaces in excellent condition. Regular upkeep and timely repairs help prevent costly damage and ensure long-term durability.",
       "serviceList": [

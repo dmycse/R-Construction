@@ -23,7 +23,7 @@
       "name": "construction",
       "title": "Construction",
       "icon": "circleMarkIcon",
-      "image": "/src/assets/images/services/thumb-1.jpg",
+      "image": "/src/assets/images/projects/construction.webp",
       "description": "Building your vision from the ground up",
       "worksList": []
     },
@@ -32,7 +32,7 @@
       "name": "renovation",
       "title": "Renovation Service",
       "icon": "circleMarkIcon",
-      "image": "/src/assets/images/services/thumb-2.jpg",
+      "image": "/src/assets/images/projects/renovation.webp",
       "description": "Transforming spaces for modern living",
       "worksList": []
     },
@@ -41,7 +41,7 @@
       "name": "restoration",
       "title": "Restoration Service",
       "icon": "circleMarkIcon",
-      "image": "/src/assets/images/services/thumb-3.jpg",
+      "image": "/src/assets/images/projects/restoration.webp",
       "description": "Restoring original character",
       "worksList": []
     },
@@ -50,7 +50,7 @@
       "name": "maintenance",
       "title": "Maintenance Service",
       "icon": "circleMarkIcon",
-      "image": "/src/assets/images/services/thumb-4.jpg",
+      "image": "/src/assets/images/projects/maintenance.webp",
       "description": "Protecting What Matters",
       "worksList": []
     }
