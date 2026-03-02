@@ -17,18 +17,16 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
 <header class="sticky top-0 z-50 bg-primary">
   <div class="size-full relative">
     <div class="page-container py-4">
-      <div class="flex items-center">
-        <div class="shrink-0 mr-auto">
-          {logo.visible && (
-            <a href={`#${logo.path}`} class="flex max-w-full h-[min(3rem,70vw)]">
-              <Image 
-                src={logo.image}
-                alt={logo.name}
-                class="size-full object-cover"
-              />
-            </a>
-          )}
-        </div>
+      <div class="grid grid-cols-[1fr_auto] items-center">
+        {logo.visible && (
+          <a href={`#${logo.path}`} class="justify-self-start block max-lg:max-w-65 h-[min(4rem,80vh)]">
+            <Image 
+              src={logo.image}
+              alt={logo.name}
+              class="h-full w-auto object-contain"
+            />
+          </a>
+        )}
         <NavDesktop
           links={links} 
           className="max-lg:hidden" 
