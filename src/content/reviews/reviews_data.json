@@ -9,7 +9,7 @@
   ],
   "ctaText": {
     "visible": true,
-    "text": "Looking for reliable construction and renovation services in Apokoronas? Contact us today to discuss your project."
+    "text": "Looking for reliable construction and renovation services in Athens? Contact us today to discuss your project."
   },
   "ctaBtn": {
     "visible": true,
@@ -23,24 +23,42 @@
       "name": "John",
       "location": "Chalandri",
       "time": "October 2025",
-      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
-      "image": "/src/assets/images/services/thumb-6.webp"
+      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust."
     },
     {
       "id": 2,
       "name": "Martin",
       "location": "Agia Paraskevi",
       "time": "August 2025",
-      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
-      "image": "/src/assets/images/services/thumb-6.jpg"
+      "text": "Professional and reliable team. They completed our renovation on time with impeccable craftsmanship. Highly recommended for any construction project."
     },
     {
       "id": 3,
       "name": "Anna",
       "location": "Nea Smyrni",
+      "time": "June 2025",
+      "text": "Exceptional workmanship from start to finish. The crew was punctual, organized, and truly cared about the results. A dependable team you can count on."
+    },
+    {
+      "id": 4,
+      "name": "Yannis",
+      "location": "Palaio Faliro",
       "time": "May 2025",
-      "text": "Incredible attention to detail. They handled our complex project flawlessly and the quality is outstanding. A team you can trust.",
-      "image": "/src/assets/images/services/thumb-6.jpg"
+      "text": "Impressive skill and dedication. They transformed our space exactly as we envisioned, exceeding expectations. I would hire them again without hesitation."
+    },
+    {
+      "id": 5,
+      "name": "Maria",
+      "location": "Kallithea",
+      "time": "April 2025",
+      "text": "From the first day to the last, their dedication never wavered. Our home feels brand new thanks to their incredible craftsmanship. True professionals in every sense."
+    },
+    {
+      "id": 6,
+      "name": "George",
+      "location": "Agia Paraskevi",
+      "time": "Оctober 2024",
+      "text": "The team’s energy and skill are unmatched. They tackled every challenge with creativity and patience, delivering stunning results. We couldn’t be happier with their workю"
     }
   ]
 }
