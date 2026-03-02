@@ -19,6 +19,13 @@ const {
   ctaBtn,
   reviewsData
 } = reviewsEntry.data;
+
+// create reviews array with duplicates for slider
+const reviewsDataToDisplay = [
+  reviewsData[reviewsData.length - 1],
+  ...reviewsData,
+  reviewsData[0]
+];
 ---
 
 <section
@@ -27,19 +34,19 @@ const {
   class="section-padding section-bg scroll-mt-10"
 >
   <div class="page-container">  
-    <div class="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-[1fr_auto] gap-10 xl:gap-x-20 xl:gap-y-30 2xl:gap-y-40">
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-[1fr_auto] gap-10 xl:gap-x-18 xl:gap-y-30 2xl:gap-y-40">
       <SectionHeader
         sectionId={sectionId} 
         sectionTitle={sectionTitle} 
         sectionSubtitle={sectionSubtitle} 
         sectionText={sectionText}
       />
-      <ReviewsList reviewsData={reviewsData} />
+      <ReviewsList reviewsData={reviewsDataToDisplay} />
       {(ctaText.visible || ctaBtn.visible) && (
         <SectionFooter
-          sectionId={sectionId}
-          ctaText={ctaText}
-          ctaBtn={ctaBtn}
+        sectionId={sectionId}
+        ctaText={ctaText}
+        ctaBtn={ctaBtn}
         />
       )}
     </div> 
