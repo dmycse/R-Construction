@@ -15,7 +15,7 @@ export function initNavLinks(ulSelector: string, onLinkChange?: (id: string) => 
   headerLinks.forEach(link => {
     const id = link.dataset.path;
     if (!id) return;
-
+    
     link.dataset.active = 'false';
 
     if (!linksMap.has(id)) {

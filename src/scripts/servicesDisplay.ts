@@ -1,7 +1,7 @@
-function initServicesContent() {
+export function initServicesContent() {
 
-  const allGroups = document.querySelectorAll('[data-id]') as NodeListOf<HTMLDivElement>;
-  const allDesktopContents = document.querySelectorAll('[data-content-id]') as NodeListOf<HTMLDivElement>;
+  const allGroups = document.querySelectorAll<HTMLDivElement>('[data-id]');
+  const allDesktopContents = document.querySelectorAll<HTMLDivElement>('[data-content-id]');
 
   const updateActiveService = (id: string | null) => {
     
@@ -24,7 +24,6 @@ function initServicesContent() {
     if (!btn) return;
 
     btn.addEventListener('click', () => {
-      
       const isAlreadyActive = el.dataset.active === 'true';
       const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       if (isAlreadyActive && isDesktop ) return;
@@ -36,5 +35,3 @@ function initServicesContent() {
     });
   });
 }
-
-initServicesContent();
