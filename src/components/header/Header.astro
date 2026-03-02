@@ -20,7 +20,7 @@ const {logo, links, mobileIcons, ctaBtn } = headerEntry.data;
       <div class="flex items-center">
         <div class="shrink-0 mr-auto">
           {logo.visible && (
-            <a href={`#${logo.path}`} class="block w-auto h-14 md:h-16">
+            <a href={`#${logo.path}`} class="flex max-w-full h-[min(3rem,70vw)]">
               <Image 
                 src={logo.image}
                 alt={logo.name}
