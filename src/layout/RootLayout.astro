@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro'
 import "@/styles/global.css";
 ---
 
@@ -11,6 +12,7 @@ import "@/styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>R-Construction | Your Relible Partner in Construction</title>
 		<meta name="description" content="Your relible partner in construction, delivering excellence and integrity from start to finish.">
+		<Analytics />
 	</head>
 	<body>
 		<slot />
