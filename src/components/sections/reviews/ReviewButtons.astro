@@ -2,9 +2,10 @@
 import IconComponent from '@/components/ui/IconComponent.astro';
 ---
 
-<div class="pl-1 xl:-ml-10 flex items-center gap-2 relative z-10">
+<div class="pl-2 flex items-center gap-2 relative z-10">
   <button
-    type="button" 
+    type="button"
+    data-reviews-prev 
     class="p-2 rotate-90 inline-flex items-center justify-center bg-accent rounded-md"
   >
     <IconComponent 
@@ -13,7 +14,8 @@ import IconComponent from '@/components/ui/IconComponent.astro';
     />
   </button>
   <button
-    type="button" 
+    type="button"
+    data-reviews-next 
     class="p-2 -rotate-90 inline-flex items-center justify-center bg-accent rounded-md"
   >
     <IconComponent 
