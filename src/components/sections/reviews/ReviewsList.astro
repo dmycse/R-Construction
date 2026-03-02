@@ -10,7 +10,27 @@ interface Props {
 const { reviewsData } = Astro.props;
 ---
 
-<div class="xl:row-span-2 lg:my-8 xl:my-0 flex flex-col xl:justify-end gap-4 lg:gap-6 relative">
-  {reviewsData.map(reviewData => <ReviewItem reviewData={reviewData} />)}
+<div
+  data-reviews-wrapper
+  data-active-index="1"
+  aria-label="Reviews slider" 
+  role="region"
+  class="size-full lg:self-end md:pr-[20%] lg:pr-[15%] 2xl:pr-[30%] flex flex-col lg:justify-end gap-4 lg:gap-6"
+>
+  
+  <div class="overflow-x-hidden pt-10 -mt-10">
+    <div
+      data-reviews
+      class="size-full flex"
+    >
+      {reviewsData.map(reviewData => <ReviewItem reviewData={reviewData} />)}
+    </div>
+  </div>
   <ReviewButtons />
+  </div>
 </div>
+
+<script>
+  import { initReviewsSlider } from '@/scripts/initReviewsSlider'; 
+  initReviewsSlider();
+</script>
